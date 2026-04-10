@@ -37,7 +37,7 @@
     </div>
 
 
-    <!-- TEXT + BUTTON -->
+    <!-- TEXT dan BUTTON -->
     <div class="text-center">
 
       <h2 class="text-2xl font-bold text-gray-900 mb-4">

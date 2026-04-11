@@ -1,5 +1,4 @@
 <?php
-
 /**
  * BACKEND LOGIC (JAVA-STYLE PHP IMPLEMENTATION)
  * Merepresentasikan struktur Service dan Model jika menggunakan Java Spring Boot.
@@ -48,7 +47,7 @@ $view = $_GET['view'] ?? 'onboarding';
  * Di lingkungan nyata, header Location akan diarahkan ke 'dashboard.php'
  */
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['start'])) {
-  // Pada implementasi asli Anda gunakan: header("Location: dashboard.php");
+  // Melakukan redirect ke file dashboard.php
   header("Location: dashboard.php");
   exit();
 }
@@ -150,7 +149,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['start'])) {
     </div>
 
     <?php if ($view === 'onboarding'): ?>
-      <!-- HALAMAN: ONBOARDING (Bisa dipindah ke index.php Anda) -->
+      <!-- HALAMAN: ONBOARDING -->
       <div class="flex-1 flex flex-col px-6 pb-10 animate-fadeIn">
         <div class="flex items-center gap-3 mt-4">
           <div class="w-10 h-8 bg-brand rounded flex items-center justify-center text-white shadow-md">
@@ -170,7 +169,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['start'])) {
             <img
               src="assets/timplanner-index.png"
               alt="Manajemen Logistik"
-              class="relative z-10 w-full h-full object-cover rounded-3xl shadow-xl shadow-orange-100/50 border-4 border-white"
+              class="relative z-10 w-full h-full object-cover rounded-3xl border-4 border-white"
               onerror="this.src='https://placehold.co/400x400/EF4C29/white?text=Fleet+Management'">
           </div>
         </div>
@@ -181,7 +180,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['start'])) {
             Atur penugasan driver serta validasi perpindahan barang antar gudang secara real-time.
           </p>
           <form method="POST">
-            <button class="w-full mt-4 py-4 bg-brand text-white font-bold font-montserrat rounded-full shadow-lg shadow-orange-200 hover:opacity-90 active:scale-[0.98] transition-all tracking-wide uppercase">
+            <!-- Menambahkan name="start" agar terdeteksi oleh logika PHP di atas -->
+            <button type="submit" name="start" class="w-full mt-4 py-4 bg-brand text-white font-bold font-montserrat rounded-full hover:opacity-90 active:scale-[0.98] transition-all tracking-wide uppercase">
               Mulai
             </button>
           </form>
@@ -190,6 +190,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['start'])) {
       </div>
 
     <?php elseif ($view === 'dashboard'): ?>
+      <!-- Konten Dashboard akan muncul di sini jika redirect berhasil -->
+      <div class="p-6">
+        <h1 class="text-xl font-bold">Dashboard Middle Mile</h1>
+      </div>
     <?php endif; ?>
 
   </div>

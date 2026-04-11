@@ -5,11 +5,11 @@
  * Simulasi data user yang diambil dari database.
  */
 $userData = [
-    'nama' => 'Fadhil Ramadhan',
-    'email' => 'fadhilrama@gmail.com',
-    'jabatan' => 'Driver',
-    'alamat' => 'Bantul, DIY',
-    'foto' => 'https://placehold.co/130x130/EF4C29/white?text=FR'
+    'nama' => 'Andy Kim',
+    'email' => 'kimandy@gmail.com',
+    'jabatan' => 'Operator',
+    'mulai_kerja' => '2020',
+    'foto' => 'https://placehold.co/130x130/EF4C29/white?text=AK'
 ];
 ?>
 
@@ -19,7 +19,7 @@ $userData = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil - Driver Middle Mile</title>
+    <title>Profil - Operator Middle Mile</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <script>
@@ -39,6 +39,7 @@ $userData = [
             height: 100%;
             margin: 0;
             overflow: hidden;
+            /* biar ga scroll body */
         }
 
         body {
@@ -143,7 +144,7 @@ $userData = [
                         </div>
                     </div>
                     <h2 class="mt-4 text-xl font-bold font-montserrat text-white"><?php echo $userData['nama']; ?></h2>
-                    <p class="text-orange-50 text-xs font-medium opacity-90 tracking-widest uppercase">ID: Driver-202011</p>
+                    <p class="text-orange-50 text-xs font-medium opacity-90 tracking-widest uppercase">ID: Operator-202069</p>
                 </div>
 
                 <!-- INFORMATION LIST -->
@@ -175,16 +176,16 @@ $userData = [
                         </div>
                     </div>
 
-                    <!-- ALAMAT -->
+                    <!-- MULAI KERJA -->
                     <div class="space-y-1.5">
-                        <label class="text-[10px] font-bold font-poppins text-gray-400 ml-1 uppercase tracking-wider">Alamat</label>
+                        <label class="text-[10px] font-bold font-poppins text-gray-400 ml-1 uppercase tracking-wider">Mulai Kerja</label>
                         <div class="w-full bg-white border border-gray-100 p-4 rounded-2xl shadow-sm flex items-center gap-3">
                             <div class="w-8 h-8 bg-orange-50 rounded-lg flex items-center justify-center text-brand">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                                 </svg>
                             </div>
-                            <span class="text-gray-700 font-medium text-sm"><?php echo $userData['alamat']; ?></span>
+                            <span class="text-gray-700 font-medium text-sm"><?php echo $userData['mulai_kerja']; ?></span>
                         </div>
                     </div>
 
@@ -192,26 +193,49 @@ $userData = [
             </div>
         </div>
 
-        <!-- BOTTOM TAB NAVIGATION -->
-        <div class="absolute bottom-0 left-0 right-0 bg-white h-20 shadow-[0_-10px_30px_rgba(0,0,0,0.03)] flex justify-around items-center px-10 rounded-t-[35px] border-t border-gray-50 z-50">
-            <!-- Tombol Home (Abu-abu) -->
-            <a href="status_pengiriman.php" class="text-gray-400 hover:text-brand transition-colors p-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
-                </svg>
-            </a>
-            <!-- Tombol List AKTIF (Warna Oranye) -->
-            <a href="pengiriman.php" class="text-gray-400 hover:text-brand transition-colors p-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-                </svg>
-            </a>
-            <!-- Tombol Profile (Abu-abu) -->
-            <button class="text-brand transition-all scale-110 p-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                </svg>
-            </button>
+        <!-- BOTTOM NAVIGATION -->
+        <div class="absolute bottom-0 left-0 w-full z-50">
+            <div class="h-20 bg-white border-t border-gray-100 shadow-[0_-8px_25px_rgba(0,0,0,0.15)] flex items-center justify-around px-2 rounded-t-[30px]">
+                <!-- Beranda -->
+                <a href="panduan_paket.php" class="flex flex-col items-center gap-1 group transition-all duration-200">
+                    <div class="w-6 h-6 flex items-center justify-center text-zinc-400 group-hover:text-brand transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                        </svg>
+                    </div>
+                    <span class="text-[10px] font-medium font-montserrat text-zinc-400 group-hover:text-brand transition-colors">Beranda</span>
+                </a>
+
+                <!-- Paket -->
+                <a href="panduan_scan.php" class="flex flex-col items-center gap-1 group transition-all duration-200">
+                    <div class="w-6 h-6 flex items-center justify-center text-zinc-400 group-hover:text-brand transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18 18.247 17.523 16.5 17.523c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <span class="text-[10px] font-medium font-montserrat text-zinc-400 group-hover:text-brand transition-colors">Paket</span>
+                </a>
+
+                <!-- Scan  -->
+                <a href="scan.php" class="flex flex-col items-center gap-1 group transition-all duration-200">
+                    <div class="w-6 h-6 flex items-center justify-center text-zinc-400 group-hover:text-brand transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"></path>
+                        </svg>
+                    </div>
+                    <span class="text-[10px] font-medium font-montserrat text-zinc-400 group-hover:text-brand transition-colors">Scan</span>
+                </a>
+
+                <!-- Operator (Active) -->
+                <a href="operator.php" class="flex flex-col items-center gap-1 group transition-all duration-200">
+                    <div class="w-6 h-6 flex items-center justify-center text-brand">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                    </div>
+                    <span class="text-[10px] font-bold font-montserrat text-brand">Operator</span>
+                </a>
+            </div>
         </div>
     </div>
 

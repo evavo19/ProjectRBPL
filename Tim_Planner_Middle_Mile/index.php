@@ -181,8 +181,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['start'])) {
             Atur penugasan driver serta validasi perpindahan barang antar gudang secara real-time.
           </p>
           <form method="POST">
-            <button name="start" type="submit" class="w-full mt-4 py-4 bg-brand text-white font-bold font-montserrat rounded-2xl shadow-lg shadow-orange-200 hover:opacity-90 active:scale-[0.98] transition-all tracking-wide uppercase">
-              Mulai Sekarang
+            <button class="w-full mt-4 py-4 bg-brand text-white font-bold font-montserrat rounded-full shadow-lg shadow-orange-200 hover:opacity-90 active:scale-[0.98] transition-all tracking-wide uppercase">
+              Mulai
             </button>
           </form>
 

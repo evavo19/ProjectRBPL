@@ -96,7 +96,6 @@ $userData = [
             animation: fadeIn 0.4s ease-out forwards;
         }
 
-        /* Dekorasi Header Merah (Tetap di belakang) */
         .profile-header-bg {
             background: linear-gradient(180deg, #EF4C29 0%, #f87171 100%);
             height: 280px;
@@ -106,7 +105,6 @@ $userData = [
             left: 0;
             border-radius: 0 0 40px 40px;
             z-index: 10;
-            /* Berada di atas latar belakang putih tapi di bawah status bar */
         }
     </style>
 </head>

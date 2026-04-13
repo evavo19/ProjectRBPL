@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['start'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Operator Last Mile</title>
+    <title>Kurir Paket Last Mile</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <script>
@@ -87,7 +87,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['start'])) {
             font-family: 'Montserrat', sans-serif;
         }
 
-        /* Ukuran kontainer disamakan dengan Tim Planner */
         .app-container {
             width: 390px;
             height: 725px;
@@ -147,7 +146,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['start'])) {
                         </svg>
                     </div>
                     <h1 class="text-sm font-bold font-montserrat tracking-tight leading-none text-gray-800 uppercase">
-                        Operator Last Mile<br>
+                        Pelacakan Pengiriman<br>
                     </h1>
                 </div>
 
@@ -156,21 +155,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['start'])) {
                     <div class="relative w-full aspect-square">
                         <div class="absolute inset-0 bg-orange-100 rounded-full blur-3xl opacity-30"></div>
                         <img
-                            src="assets/welcome.png"
-                            alt="Logistik Last Mile"
+                            src="assets/kurirlastmile.png"
+                            alt="Kurir Paket Last Mile"
                             class="relative z-10 w-full h-full object-cover rounded-3xl border-4 border-white"
-                            onerror="this.src='https://placehold.co/400x400/EF4C29/white?text=Last+Mile'">
+                            onerror="this.src='https://placehold.co/400x400/EF4C29/white?text=Kurir+Last+Mile'">
                     </div>
                 </div>
 
                 <!-- Text Content & Action -->
                 <div class="text-center space-y-3">
-                    <h2 class="text-2xl font-bold font-poppins text-gray-900 leading-tight">Kelola Pengiriman Akhir</h2>
+                    <h2 class="text-2xl font-bold font-poppins text-gray-900 leading-tight">Kelola Pengiriman Anda</h2>
                     <p class="text-gray-500 text-sm leading-relaxed px-2">
-                        Pantau kurir, paket, dan status pengiriman hingga ke tangan penerima secara real-time.
-                    </p>
-
-                    <a href="panduan_paket.php"
+                        Lacak paket, rute, dan pengiriman anda secara efisien dengan mudah </p>
+                    <a href="pelacakan_pengiriman.php"
                         class="block w-full mt-4 py-4 text-center bg-brand text-white font-bold font-montserrat rounded-full">
                         Mulai
                     </a>
@@ -180,8 +177,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['start'])) {
         <?php elseif ($view === 'dashboard'): ?>
             <!-- Placeholder untuk Dashboard -->
             <div class="p-6">
-                <h1 class="text-xl font-bold font-poppins">Dashboard Last Mile</h1>
-                <p class="text-sm text-gray-500">Selamat datang, Operator.</p>
+                <h1 class="text-xl font-bold font-poppins">Kurir Last Mile</h1>
+                <p class="text-sm text-gray-500">Selamat datang, Kurir.</p>
                 <a href="?view=onboarding" class="text-brand text-sm font-bold mt-4 block">Kembali</a>
             </div>
         <?php endif; ?>

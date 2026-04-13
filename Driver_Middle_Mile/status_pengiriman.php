@@ -57,6 +57,8 @@ $deliveryData = [
             margin: 0 auto;
             position: relative;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 30px;
+            border: none;
         }
 
         /* Sembunyikan scrollbar */

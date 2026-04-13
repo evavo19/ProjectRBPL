@@ -1,0 +1,22 @@
+<!-- MODAL PESANAN BERHASIL (Sesuai Gambar Referensi) -->
+        <div id="modalOverlay" class="fixed inset-0 bg-black/40 z-[100] flex items-center justify-center hidden">
+            <div class="bg-white w-[280px] rounded-[24px] p-8 flex flex-col items-center modal-scale shopee-shadow relative">
+                <!-- Ikon Centang Besar -->
+                <div class="w-24 h-24 bg-[#F54D2D] rounded-[20px] flex items-center justify-center mb-6">
+                    <svg viewBox="0 0 24 24" fill="none" class="w-14 h-14 text-white" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </div>
+                
+                <!-- Teks Notifikasi -->
+                <h3 class="text-[#F54D2D] font-bold text-center text-lg leading-tight">
+                    Pesanan berhasil<br>dibuat
+                </h3>
+
+                <!-- Tombol Close (Opsional) -->
+                <button onclick="closeModal()" class="mt-8 text-gray-400 text-sm font-medium">Tutup</button>
+            </div>
+        </div>
+
+
+        

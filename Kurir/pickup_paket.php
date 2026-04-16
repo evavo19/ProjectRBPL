@@ -70,6 +70,7 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -120,8 +121,13 @@
         }
 
         @keyframes scanAnim {
-            0% { top: 0; }
-            100% { top: 100%; }
+            0% {
+                top: 0;
+            }
+
+            100% {
+                top: 100%;
+            }
         }
     </style>
 </head>
@@ -172,8 +178,8 @@
                         <i data-lucide="scan-barcode" class="w-5 h-5"></i>
                     </button>
                 </div>
-                <h2 class="text-2xl font-bold font-poppins text-gray-900 leading-tight">Halo, Ahmad! 👋</h2>
-                <p class="text-gray-400 text-xs mt-1">Kamu punya <span id="task-count-text" class="text-brand font-bold">2 paket</span> yang harus dijemput.</p>
+                <h2 class="text-2xl font-bold font-poppins text-gray-900 leading-tight">Halo, Muhammad! 👋</h2>
+                <p class="text-gray-400 text-xs mt-1 font-poppins">Kamu punya <span id="task-count-text" class="text-brand font-bold">2 paket</span> yang harus dijemput.</p>
 
                 <!-- EMPTY STATE PICKUP -->
                 <div id="empty-tasks" class="hidden flex flex-col items-center justify-center mt-20 text-center animate-up">
@@ -295,7 +301,7 @@
                 list.classList.add('hidden');
                 empty.classList.remove('hidden');
                 counterText.innerText = "tidak ada paket";
-                
+
                 setTimeout(() => {
                     switchView('history');
                 }, 1200);

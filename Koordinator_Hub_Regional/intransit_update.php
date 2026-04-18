@@ -1,7 +1,5 @@
 <?php
-/**
- * Simulasi Data Update Perjalanan
- */
+
 $trip_info = [
     'trip_id' => 'TRIP-2024-001',
     'truck_id' => 'TRK-001',
@@ -14,9 +12,7 @@ $trip_info = [
 ];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Logic simpan update lokasi atau status
-    // header("Location: halaman_utama.php");
-    // exit();
+
 }
 ?>
 <!DOCTYPE html>
@@ -37,12 +33,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body class="bg-gray-200 flex justify-center">
 
-    <!-- Mobile Container (Radius 25px) -->
     <div class="w-full max-w-[384px] h-screen bg-white shadow-2xl relative flex flex-col md:rounded-[25px] overflow-hidden">
         
-        <!-- HEADER SECTION -->
         <div class="flex-none bg-orange-600 z-50">
-            <!-- STATUS BAR -->
             <div class="px-6 pt-5 pb-2">
                 <div class="flex justify-between items-center text-white">
                     <span class="text-xs font-semibold" id="current-time">09:41</span>
@@ -58,7 +51,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
             </div>
 
-            <!-- TITLE BAR -->
             <div class="px-6 py-4 flex items-center gap-4 border-b border-orange-500/30">
                 <a href="jadwal_truck_berangkat.php" class="p-2 -ml-2 hover:bg-orange-700 rounded-full transition-colors">
                     <i class="fas fa-arrow-left text-lg text-white"></i>
@@ -67,10 +59,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </div>
 
-        <!-- CONTENT AREA -->
         <div class="flex-1 overflow-y-auto hide-scrollbar bg-gray-50 pb-32">
             
-            <!-- Perjalanan Aktif Info -->
             <div class="p-6">
                 <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 mb-6">
                     <div class="flex justify-between items-center mb-4">
@@ -107,7 +97,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
                 </div>
 
-                <!-- Form Update -->
                 <form id="updateForm" class="space-y-6">
                     <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
                         <h3 class="text-sm font-bold text-slate-800 mb-4 font-montserrat uppercase tracking-wider">Update Lokasi Saat Ini</h3>
@@ -146,7 +135,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </div>
 
-        <!-- FOOTER ACTION -->
         <div class="absolute bottom-0 left-0 right-0 bg-white p-6 shadow-[2px_-2px_10px_0px_rgba(3,3,3,0.05)] border-t border-gray-100">
             <button type="button" onclick="submitUpdate()" id="btnSubmit" class="w-full py-4 bg-orange-600 text-white rounded-2xl font-bold font-montserrat shadow-lg shadow-orange-100 active:scale-95 transition-all flex justify-center items-center gap-2">
                 <span id="btnText">Simpan Update</span>
@@ -156,7 +144,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     </div>
 
-    <!-- Success Modal Overlay -->
     <div id="successModal" class="fixed inset-0 bg-black/60 z-[100] hidden items-center justify-center p-6 backdrop-blur-sm">
         <div class="bg-white rounded-[30px] p-8 w-full max-w-[320px] text-center shadow-2xl scale-90 animate-in fade-in zoom-in duration-300">
             <div class="w-20 h-20 bg-green-50 text-green-500 rounded-full flex items-center justify-center text-3xl mx-auto mb-6">

@@ -1,7 +1,5 @@
 <?php
-/**
- * Simulasi Data Tracking Paket
- */
+
 $stats = [
     'in_transit' => '1,245',
     'active_drivers' => '87',
@@ -20,7 +18,7 @@ $packages = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tracking Paket - Middle Mile</title>
+    <title>Tracking Paket - Koordinator Hub Regionale</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -33,12 +31,9 @@ $packages = [
 </head>
 <body class="bg-gray-200 flex justify-center">
 
-    <!-- Mobile Container (Radius 25px) -->
     <div class="w-full max-w-[384px] h-screen bg-white shadow-2xl relative flex flex-col md:rounded-[25px] overflow-hidden">
         
-        <!-- HEADER SECTION -->
         <div class="flex-none bg-orange-600 z-50">
-            <!-- STATUS BAR -->
             <div class="px-6 pt-5 pb-2">
                 <div class="flex justify-between items-center text-white">
                     <span class="text-xs font-semibold" id="current-time">09:41</span>
@@ -54,7 +49,6 @@ $packages = [
                 </div>
             </div>
 
-            <!-- TITLE BAR -->
             <div class="px-6 py-4 flex items-center gap-4 border-b border-orange-500/30">
                 <a href="halaman_utama.php" class="p-2 -ml-2 hover:bg-orange-700 rounded-full transition-colors">
                     <i class="fas fa-arrow-left text-lg text-white"></i>
@@ -63,10 +57,8 @@ $packages = [
             </div>
         </div>
 
-        <!-- CONTENT AREA -->
         <div class="flex-1 overflow-y-auto hide-scrollbar bg-gray-50 pb-24">
             
-            <!-- Quick Stats -->
             <div class="p-6 space-y-3">
                 <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex justify-between items-center">
                     <span class="text-sm font-bold text-slate-700">Packages in Transit</span>
@@ -82,15 +74,12 @@ $packages = [
                 </div>
             </div>
 
-            <!-- Package List -->
             <div class="px-6 pb-6">
                 <h2 class="text-lg font-bold text-slate-800 font-montserrat mb-4">Monitoring Paket</h2>
                 <div class="space-y-4">
                     <?php foreach ($packages as $pkg): ?>
                     <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 transition-all hover:shadow-md">
-                        <!-- Container Flex Row untuk menyejajarkan kiri dan kanan -->
                         <div class="flex justify-between items-center">
-                            <!-- Sisi Kiri: ID dan Status -->
                             <div class="flex flex-col items-start text-left">
                                 <p class="text-[10px] font-bold text-gray-400 uppercase mb-1">Package ID</p>
                                 <h3 class="text-base font-bold text-slate-800 font-montserrat mb-2"><?php echo $pkg['id']; ?></h3>
@@ -99,7 +88,6 @@ $packages = [
                                 </div>
                             </div>
                             
-                            <!-- Sisi Kanan: Button View Details (Terpusat secara vertikal terhadap konten kiri) -->
                             <button onclick="window.location.href='konfirmasi_paket.php'" class="px-5 py-2.5 bg-orange-600 text-white text-[11px] font-bold rounded-xl shadow-lg shadow-orange-100 active:scale-95 transition-all">
                                 View Details
                             </button>
@@ -110,7 +98,6 @@ $packages = [
             </div>
         </div>
 
-        <!-- Tombol Kembali ke Halaman Utama (Floating Button) -->
         <div class="absolute bottom-6 left-0 right-0 px-6 flex justify-center pointer-events-none">
             <a href="halaman_utama.php" class="pointer-events-auto bg-slate-900 text-white px-6 py-3.5 rounded-2xl font-bold font-montserrat shadow-2xl flex items-center gap-3 active:scale-95 transition-all">
                 <i class="fas fa-home"></i>

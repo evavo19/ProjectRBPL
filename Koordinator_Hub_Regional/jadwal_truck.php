@@ -1,7 +1,5 @@
 <?php
-/**
- * Data Simulasi Jadwal Keberangkatan Truk
- */
+
 $departure_list = [
     [
         'id' => 'TRK-001',
@@ -37,7 +35,7 @@ $departure_list = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jadwal Keberangkatan Truk - Middle Mile</title>
+    <title>Jadwal Keberangkatan Truk - Koordinator Hub Regional</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -50,12 +48,9 @@ $departure_list = [
 </head>
 <body class="bg-gray-200 flex justify-center">
 
-    <!-- Mobile Container (Radius 25px) -->
     <div class="w-full max-w-[384px] h-screen bg-white shadow-2xl relative flex flex-col md:rounded-[25px] overflow-hidden">
         
-        <!-- HEADER SECTION -->
         <div class="flex-none bg-orange-600 z-50">
-            <!-- STATUS BAR -->
             <div class="px-6 pt-5 pb-2">
                 <div class="flex justify-between items-center text-white">
                     <span class="text-xs font-semibold" id="current-time">09:41</span>
@@ -71,7 +66,6 @@ $departure_list = [
                 </div>
             </div>
 
-            <!-- TITLE BAR -->
             <div class="px-6 py-4 flex items-center gap-4 border-b border-orange-500/30">
                 <a href="distribusi.php" class="p-2 -ml-2 hover:bg-orange-700 rounded-full transition-colors">
                     <i class="fas fa-arrow-left text-lg text-white"></i>
@@ -80,7 +74,6 @@ $departure_list = [
             </div>
         </div>
 
-        <!-- CONTENT AREA -->
         <div class="flex-1 overflow-y-auto hide-scrollbar bg-gray-50 pb-24">
             
             <div class="p-6">
@@ -94,7 +87,6 @@ $departure_list = [
                     </div>
                 </div>
 
-                <!-- Departure Cards -->
                 <div class="space-y-4">
                     <?php foreach ($departure_list as $truck): ?>
                     <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 transition-all hover:shadow-md">
@@ -153,7 +145,6 @@ $departure_list = [
             </div>
         </div>
 
-        <!-- Tombol Kembali ke Halaman Utama (Floating Button) -->
         <div class="absolute bottom-6 left-0 right-0 px-6 flex justify-center pointer-events-none">
             <a href="halaman_utama.php" class="pointer-events-auto bg-slate-900 text-white px-6 py-3.5 rounded-2xl font-bold font-montserrat shadow-2xl flex items-center gap-3 active:scale-95 transition-all">
                 <i class="fas fa-home"></i>

@@ -1,9 +1,5 @@
 <?php
 
-/**
- * BACKEND LOGIC (PHP)
- * Simulasi data user yang diambil dari database.
- */
 $userData = [
     'nama' => 'Malikha Aprilia',
     'email' => 'apriliamalik@gmail.com',
@@ -40,14 +36,12 @@ $userData = [
             height: 100%;
             margin: 0;
             overflow: hidden;
-            /* biar ga scroll body */
         }
 
         body {
             display: flex;
             justify-content: center;
             align-items: center;
-            /* ⬅️ ini penting biar center vertical */
         }
 
         .font-poppins {
@@ -61,7 +55,6 @@ $userData = [
         .app-container {
             width: 390px;
             height: 100vh;
-            /* ⬅️ full layar */
             background-color: white;
             border-radius: 30px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
@@ -112,14 +105,9 @@ $userData = [
 <body>
 
     <div class="app-container">
-
-        <!-- HEADER BACKGROUND -->
         <div class="profile-header-bg"></div>
-
+        
         <div class="sticky-header-content pt-0 px-0">
-
-
-            <!-- STATUS BAR -->
             <div class="flex justify-between items-center px-8 pt-6 pb-2 relative z-50 text-white">
                 <span class="text-xs font-semibold"><?php echo date('H:i'); ?></span>
                 <div class="flex items-center gap-1.5">
@@ -132,9 +120,7 @@ $userData = [
                 </div>
             </div>
 
-            <!-- MAIN SCROLLABLE CONTENT -->
             <div class="flex-1 overflow-y-auto no-scrollbar relative z-10 px-6 mt-6 animate-fadeIn">
-                <!-- PROFILE INFO -->
                 <div class="flex flex-col items-center">
                     <div class="relative">
                         <div class="w-32 h-32 rounded-full border-4 border-white shadow-xl overflow-hidden bg-gray-100">
@@ -150,10 +136,7 @@ $userData = [
                     <p class="text-orange-50 text-xs font-medium opacity-90 tracking-widest uppercase">ID: MM-202409</p>
                 </div>
 
-                <!-- INFORMATION LIST -->
                 <div class="mt-8 space-y-4 pb-10">
-
-                    <!-- EMAIL -->
                     <div class="space-y-1.5">
                         <label class="text-[10px] font-bold font-poppins text-gray-400 ml-1 uppercase tracking-wider">Email Address</label>
                         <div class="w-full bg-white border border-gray-100 p-4 rounded-2xl shadow-sm flex items-center gap-3">
@@ -166,7 +149,6 @@ $userData = [
                         </div>
                     </div>
 
-                    <!-- JABATAN -->
                     <div class="space-y-1.5">
                         <label class="text-[10px] font-bold font-poppins text-gray-400 ml-1 uppercase tracking-wider">Position</label>
                         <div class="w-full bg-white border border-gray-100 p-4 rounded-2xl shadow-sm flex items-center gap-3">
@@ -179,7 +161,6 @@ $userData = [
                         </div>
                     </div>
 
-                    <!-- MULAI KERJA -->
                     <div class="space-y-1.5">
                         <label class="text-[10px] font-bold font-poppins text-gray-400 ml-1 uppercase tracking-wider">Mulai Kerja</label>
                         <div class="w-full bg-white border border-gray-100 p-4 rounded-2xl shadow-sm flex items-center gap-3">
@@ -192,7 +173,6 @@ $userData = [
                         </div>
                     </div>
 
-                    <!-- ALAMAT -->
                     <div class="space-y-1.5">
                         <label class="text-[10px] font-bold font-poppins text-gray-400 ml-1 uppercase tracking-wider">Alamat</label>
                         <div class="w-full bg-white border border-gray-100 p-4 rounded-2xl shadow-sm flex items-center gap-3">

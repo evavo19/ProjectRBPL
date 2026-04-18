@@ -1,9 +1,5 @@
 <?php
 
-/**
- * BACKEND LOGIC (JAVA STYLE)
- */
-
 class Hub
 {
     public $nama;
@@ -44,7 +40,7 @@ $dataHub = $service->getDataHub();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perencanaan Armada</title>
+    <title>Perencanaan Armada  - Tim Planner Middle Mile</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
@@ -92,7 +88,6 @@ $dataHub = $service->getDataHub();
             flex-direction: column;
         }
 
-        /* Menghilangkan scrollbar di semua browser */
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
@@ -124,7 +119,6 @@ $dataHub = $service->getDataHub();
 
     <div class="app-container no-scrollbar ">
 
-        <!-- STATUS BAR -->
         <div class="flex justify-between items-center px-8 pt-6 pb-2 bg-white sticky top-0 z-50">
             <span class="text-xs font-semibold"><?php echo date('H:i'); ?></span>
             <div class="flex items-center gap-1.5">
@@ -137,13 +131,10 @@ $dataHub = $service->getDataHub();
             </div>
         </div>
 
-        <!-- HEADER -->
         <div class="flex justify-between items-center px-5 mt-2">
             <img src="assets/ceklis.png" class="w-9 h-9">
 
-            <h1 class="text-lg font-bold font-montserrat">
-                Perencana Armada
-            </h1>
+            <h1 class="text-lg font-bold font-montserrat">Perencana Armada</h1>
 
             <a href="profil.php">
                 <img src="assets/profil.png"
@@ -152,30 +143,21 @@ $dataHub = $service->getDataHub();
             </a>
         </div>
 
-        <!-- CONTENT -->
         <div class="no-scrollbar px-5 mt-4 space-y-5 overflow-y-auto">
 
-            <!-- IMAGE -->
             <div class="rounded-xl overflow-hidden">
                 <img src="assets/peta.png" class="w-full h-40 object-cover">
             </div>
 
-            <!-- SLIDER INDICATOR -->
             <div class="flex items-center gap-2">
                 <div class="w-20 h-1 bg-brand"></div>
                 <div class="w-20 h-1 bg-gray-300"></div>
                 <div class="w-3 h-3 bg-brand rounded-full"></div>
             </div>
 
-            <!-- PARAMETER -->
             <div>
-                <h2 class="text-xs font-bold font-poppins mb-2">
-                    Parameter yang Dapat Disesuaikan
-                </h2>
-
-                <p class="text-xs text-gray-500 mb-2 font-poppins">
-                    Prioritas Rute
-                </p>
+                <h2 class="text-xs font-bold font-poppins mb-2">Parameter yang Dapat Disesuaikan</h2>
+                <p class="text-xs text-gray-500 mb-2 font-poppins">Prioritas Rute</p>
 
                 <div class="flex items-center gap-2">
                     <div class="w-20 h-1 bg-brand"></div>
@@ -184,11 +166,8 @@ $dataHub = $service->getDataHub();
                 </div>
             </div>
 
-            <!-- LIST HUB -->
             <div>
-                <h2 class="text-xs font-bold font-poppins mb-3">
-                    Ringkasan Penugasan Armada
-                </h2>
+                <h2 class="text-xs font-bold font-poppins mb-3">Ringkasan Penugasan Armada</h2>
 
                 <div class="space-y-3">
                     <?php foreach ($dataHub as $hub): ?>

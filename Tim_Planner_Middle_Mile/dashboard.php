@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Dashboard Perencana Armada
- * Menggunakan Tailwind CSS untuk UI dan PHP untuk Logika Data
- */
-
-// Simulasi Data dari Database
 $stats = [
     'waktu' => "9:27",
     'update_terakhir' => date('d M Y, H:i'),
@@ -28,7 +22,7 @@ function formatRibuan($n)
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Planner Middle Mile</title>
+    <title>Dashboard - Tim Planner Middle Mile</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <script>
@@ -88,7 +82,6 @@ function formatRibuan($n)
 <body class="font-poppins">
 
     <div class="app-container no-scrollbar">
-        <!-- Header / Status Bar (Rounded top mengikuti container) -->
         <div class="flex justify-between items-center px-8 pt-6 pb-2 bg-white sticky top-0 z-[100] border-b border-gray-50 rounded-t-[25px]">
             <span class="text-xs font-semibold"><?php echo date('H:i'); ?></span>
             <div class="flex items-center gap-1.5">
@@ -101,7 +94,6 @@ function formatRibuan($n)
             </div>
         </div>
 
-        <!-- Toolbar Title -->
         <div class="px-5 flex justify-between items-center mt-4">
             <div class="flex items-center gap-3">
                 <img src="assets/ceklis.png" alt="Logo" class="w-9 h-9 object-contain">
@@ -114,22 +106,17 @@ function formatRibuan($n)
             </a>
         </div>
 
-        <!-- Konten Utama -->
         <div class="px-5 mt-8 space-y-7 mb-10">
-
-            <!-- Section: Ringkasan -->
             <div class="space-y-3">
                 <h2 class="text-xl font-bold text-gray-900">Ringkasan Dasbor</h2>
                 <img src="assets/ringkasandasbor.png" alt="Grafik Ringkasan" class="w-full h-full object-cover border border-gray-100 rounded-xl">
             </div>
 
-            <!-- Section: Tujuan Hub -->
             <div class="space-y-3">
                 <h2 class="text-xl font-bold text-gray-900">Tujuan Hub</h2>
                 <img src="assets/tujuanhub.png" alt="Peta Hub" class="w-full h-full object-cover border border-gray-100 rounded-xl">
             </div>
 
-            <!-- Section: Status Armada -->
             <div class="space-y-3">
                 <h2 class="text-xl font-bold text-gray-900">Status Armada</h2>
                 <div class="w-full h-44 bg-white rounded-[20px] shadow-sm border border-gray-100 p-4 flex flex-col items-center justify-center">
@@ -143,7 +130,6 @@ function formatRibuan($n)
                 </div>
             </div>
 
-            <!-- Section: Paket Hub -->
             <div class="space-y-3">
                 <h2 class="text-xl font-bold text-gray-900">Jumlah Paket per Hub</h2>
                 <div class="space-y-2.5">
@@ -156,7 +142,6 @@ function formatRibuan($n)
             </div>
 
             <div class="flex flex-col items-center space-y-4 pt-4 pb-12">
-                <!-- Section: Navigasi -->
                 <div class="space-y-3 pt-4 pb-12">
                     <a href="perencanaan.php" class="py-3 px-6 bg-white rounded-full shadow-[0_8px_20px_rgba(0,0,0,0.15)] flex items-center px-4 gap-4">
                         <img src="assets/schedule.png" class="w-10 h-10 object-contain">

@@ -1,16 +1,33 @@
 <?php
+session_start();
 
-/**
- * BACKEND LOGIC (PHP)
- * Simulasi data user yang diambil dari database.
- */
-$userData = [
-    'nama' => 'Novia Nuraini',
-    'email' => 'novia1232@gmail.com',
-    'mulai_jual' => '2016',
-    'alamat' => 'Bantul, DIY',
-    'foto' => 'https://placehold.co/130x130/EF4C29/white?text=NN'
-];
+// koneksi database
+require '../config/db.php'; // sesuaikan path
+
+// cek apakah sudah login
+if (!isset($_SESSION['penjual_id'])) {
+    header("Location: login_penjual.php");
+    exit();
+}
+// ambil data dari database berdasarkan ID
+$id = $_SESSION['penjual_id'];
+
+$query = "SELECT * FROM profil_penjual WHERE id = '$id'";
+$result = mysqli_query($conn, $query);
+$userData = mysqli_fetch_assoc($result);
+
+$nama = $userData['nama'] ?? 'User';
+
+$kata = explode(' ', trim($nama));
+
+$inisial = '';
+foreach ($kata as $k) {
+    if (!empty($k)) {
+        $inisial .= strtoupper($k[0]);
+    }
+    if (strlen($inisial) == 3) break;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +39,6 @@ $userData = [
     <title>Profil - Penjual</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <!-- TAMBAHKAN SCRIPT LUCIDE DI SINI -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <script>
@@ -74,7 +90,7 @@ $userData = [
 
         .profile-header-bg {
             background: linear-gradient(180deg, #f23911 0%, #f29d9d 100%);
-            height: 280px;
+            height: 250px;
             width: 100%;
             position: absolute;
             top: 0;
@@ -95,44 +111,25 @@ $userData = [
 <body>
 
     <div class="app-container">
-        <!-- HEADER BACKGROUND -->
         <div class="profile-header-bg"></div>
 
-        <!-- STATUS BAR -->
-        <div class="flex justify-between items-center px-8 pt-6 pb-2 relative z-50 font-poppins text-white">
-            <span class="text-xs font-semibold font-poppins" id="current-time">00:00</span>
-            <div class="flex items-center gap-1.5">
-                <svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"></path>
-                </svg>
-                <div class="flex items-center">
-                    <div class="w-5 h-2.5 border border-white rounded-[2px] p-[1px] flex items-center">
-                        <div class="bg-white h-full w-[70%] rounded-[1px]"></div>
-                    </div>
-                    <div class="w-[2px] h-1 bg-white ml-[1px] rounded-sm"></div>
-                </div>
-            </div>
-        </div>
-
         <div class="content-area no-scrollbar px-6 mt-6 pb-32 sticky top-0">
-            <!-- PROFILE INFO -->
             <div class="flex flex-col items-center">
                 <div class="relative">
-                    <div class="w-32 h-32 rounded-full border-4 border-white shadow-xl overflow-hidden bg-gray-100">
-                        <img src="<?php echo $userData['foto']; ?>" alt="Profile Photo" class="w-full h-full object-cover">
+                    <div class="w-28 h-28 rounded-full border-4 border-white shadow-xl overflow-hidden bg-gray-100">
+                        <img src="<?php echo $userData['name'] ?? 'https://placehold.co/130x130/EF4C29/white?text=' . $inisial; ?>">
+                            class="w-full h-full object-cover">
                     </div>
                     <div class="absolute bottom-1 right-1 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md text-brand border border-gray-100">
                         <i data-lucide="edit-3" class="w-4 h-4"></i>
                     </div>
                 </div>
                 <h2 class="mt-4 text-xl font-bold font-['Montserrat'] text-white"><?php echo $userData['nama']; ?></h2>
-                <p class="text-orange-50 text-xs font-medium opacity-90 tracking-widest uppercase">ID: Seller-2024</p>
+                <p class="text-orange-50 text-xs font-medium opacity-90 tracking-widest uppercase">ID: Seller-<?php echo $userData['mulai_jual']; ?></p>
             </div>
 
-            <!-- INFORMATION LIST -->
-            <div class="mt-8 space-y-4">
-                <!-- EMAIL -->
-                <div class="space-y-1.5">
+            <div class="mt-20 space-y-4">
+                <div class="space-y-3">
                     <label class="text-[10px] font-bold text-gray-400 ml-1 uppercase tracking-wider">Email Address</label>
                     <div class="w-full bg-white border border-gray-100 p-4 rounded-2xl shadow-sm flex items-center gap-3">
                         <div class="w-8 h-8 bg-orange-50 rounded-lg flex items-center justify-center text-brand">
@@ -142,7 +139,6 @@ $userData = [
                     </div>
                 </div>
 
-                <!-- TAHUN BERGABUNG -->
                 <div class="space-y-1.5">
                     <label class="text-[10px] font-bold text-gray-400 ml-1 uppercase tracking-wider">Mulai Jual Sejak</label>
                     <div class="w-full bg-white border border-gray-100 p-4 rounded-2xl shadow-sm flex items-center gap-3">
@@ -153,7 +149,6 @@ $userData = [
                     </div>
                 </div>
 
-                <!-- ALAMAT -->
                 <div class="space-y-1.5">
                     <label class="text-[10px] font-bold text-gray-400 ml-1 uppercase tracking-wider">Lokasi Toko</label>
                     <div class="w-full bg-white border border-gray-100 p-4 rounded-2xl shadow-sm flex items-center gap-3">
@@ -163,18 +158,11 @@ $userData = [
                         <span class="text-gray-700 font-medium text-sm"><?php echo $userData['alamat']; ?></span>
                     </div>
                 </div>
-
-                <!-- LOGOUT -->
-                <button class="w-full mt-4 bg-gray-50 text-orange-600 font-bold p-4 rounded-2xl border border-dashed border-red-200 flex items-center justify-center gap-2 active:scale-95 transition">
-                    <i data-lucide="log-out" class="w-4 h-4"></i>
-                    <span>Keluar Akun</span>
-                </button>
             </div>
         </div>
 
-        <!-- BOTTOM NAVIGATION -->
         <div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[389px] h-20 bg-white border-t rounded-t-[25px] rounded-b-[25px] shadow-[0px_-2px_10px_rgba(0,0,0,0.05)] flex justify-around items-center px-5 pb-4 z-50">
-            <a href="index.php" class="flex flex-col items-center gap-1 group">
+            <a href="index_penjual.php" class="flex flex-col items-center gap-1 group">
                 <i data-lucide="layout-grid" class="w-6 h-6 text-gray-400 group-hover:text-brand transition"></i>
                 <span class="text-[9px] text-gray-400 group-hover:text-brand transition">Dashboard</span>
             </a>
@@ -187,7 +175,7 @@ $userData = [
                     <i data-lucide="plus" class="w-6 h-6"></i>
                 </div>
             </a>
-            <a href="notifikasi.php" class="flex flex-col items-center gap-1 group">
+            <a href="notifikasi_penjual.php" class="flex flex-col items-center gap-1 group">
                 <i data-lucide="bell" class="w-6 h-6 text-gray-400 group-hover:text-brand transition"></i>
                 <span class="text-[9px] text-gray-400 group-hover:text-brand transition">Notifikasi</span>
             </a>
@@ -198,12 +186,9 @@ $userData = [
         </div>
     </div>
 
-    <!-- JALANKAN LUCIDE UNTUK ME-RENDER IKON -->
     <script>
-        // Inisialisasi Ikon
         lucide.createIcons();
 
-        // Jam Digital
         function updateTime() {
             const now = new Date();
             const time = now.getHours().toString().padStart(2, '0') + ":" +

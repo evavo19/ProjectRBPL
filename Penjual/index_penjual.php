@@ -1,9 +1,5 @@
 <?php
 
-/**
- * Logika Backend (Simulasi Database)
- * Dalam aplikasi nyata, data ini diambil dari database MySQL menggunakan PDO/mysqli.
- */
 $seller_data = [
     'shop_name' => 'Seller Operations',
     'shop_url' => 'shopee.co.id/selleroperations',
@@ -48,16 +44,16 @@ $seller_data = [
             position: relative;
             display: flex;
             flex-direction: column;
-            overflow: hidden;
             border-radius: 25px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            overflow: visible;
+            clip-path: inset(0 round 25px);
         }
 
         .scrollable-content {
             flex: 1;
             overflow-y: auto;
             padding-bottom: 80px;
-            /* Space for bottom nav */
         }
 
         .scrollable-content::-webkit-scrollbar {
@@ -73,34 +69,7 @@ $seller_data = [
 <body>
 
     <div class="app-container">
-
-        <!-- HEADER / STATUS BAR -->
-        <div class="bg-orange-600 text-white px-6 pt-4 pb-2">
-            <div class="flex justify-between items-center px-0 pt-1 text-white">
-
-                <!-- JAM -->
-                <span class="text-xs font-semibold font-poppins" id="current-time">00:00</span>
-
-                <!-- ICON -->
-                <div class="flex items-center gap-1.5">
-
-                    <!-- SIGNAL -->
-                    <svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"></path>
-                    </svg>
-
-                    <!-- BATTERY -->
-                    <div class="flex items-center">
-                        <div class="w-5 h-2.5 border border-white rounded-[2px] p-[1px] flex items-center">
-                            <div class="bg-white h-full w-[70%] rounded-[1px]"></div>
-                        </div>
-                        <div class="w-[2px] h-1 bg-white ml-[1px] rounded-sm"></div>
-                    </div>
-
-                </div>
-
-            </div>
-
+        <div class="bg-orange-600 text-white sticky top-0 z-50 px-6 pt-4 pb-2">
             <div class="flex justify-between items-center py-4">
                 <div class="flex items-center gap-3">
                     <i data-lucide="chevron-left" class="w-6 h-6"></i>
@@ -116,7 +85,6 @@ $seller_data = [
 
         <div class="scrollable-content">
 
-            <!-- SELLER INFO CARD -->
             <div class="bg-white p-4 flex items-center justify-between shadow-sm border-b">
                 <div class="flex items-center gap-3">
                     <div class="w-14 h-14 rounded-full bg-gray-200 border-2 border-gray-100 overflow-hidden">
@@ -132,14 +100,12 @@ $seller_data = [
                 </button>
             </div>
 
-            <!-- PENGUMUMAN PENJUAL (BANNER) -->
             <div class="mt-4 px-4">
                 <div class="flex justify-between items-center mb-2">
                     <h3 class="text-sm font-bold text-gray-800">Pengumuman Penjual</h3>
                     <span class="text-[10px] text-gray-400">Lainnya ></span>
                 </div>
                 <div class="w-full h-32 bg-orange-600 rounded-xl relative overflow-hidden flex flex-col justify-center items-center text-center p-4">
-                    <!-- Ornamen Lingkaran -->
                     <div class="absolute -top-10 -right-10 w-24 h-24 bg-orange-400 rounded-full opacity-50"></div>
                     <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-orange-600 rounded-full opacity-50"></div>
 
@@ -148,7 +114,6 @@ $seller_data = [
                         KAMPUS SHOPEE
                     </div>
 
-                    <!-- Pagination Dots -->
                     <div class="absolute bottom-2 flex gap-1">
                         <div class="w-1.5 h-1.5 bg-yellow-400 rounded-full"></div>
                         <div class="w-1.5 h-1.5 bg-orange-300 rounded-full"></div>
@@ -157,7 +122,6 @@ $seller_data = [
                 </div>
             </div>
 
-            <!-- STATUS PESANAN -->
             <div class="mt-6 px-4 py-3 bg-white border-y border-gray-100">
                 <div class="flex justify-between items-center mb-4">
                     <h3 class="text-sm font-bold text-gray-800">Status Pesanan</h3>
@@ -191,7 +155,6 @@ $seller_data = [
                 </div>
             </div>
 
-            <!-- FITUR UTAMA -->
             <div class="mt-2 grid grid-cols-3 gap-y-6 p-6 bg-white">
                 <div class="flex flex-col items-center gap-2">
                     <div class="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center text-white shadow-md">
@@ -244,14 +207,13 @@ $seller_data = [
                 <span class="text-[9px] text-gray-400 group-hover:text-orange-600 transition">Produk</span>
             </a>
 
-            <!-- Center Tab -->
             <a href="tambah_produk.php" class="relative -top-4 bg-white p-3 rounded-full shadow-lg cursor-pointer hover:scale-105 transition">
                 <div class="bg-orange-600 w-12 h-12 rounded-full flex items-center justify-center text-white">
                     <i data-lucide="plus" class="w-6 h-6"></i>
                 </div>
             </a>
 
-            <a href="notifikasi.php" class="flex flex-col items-center gap-1 cursor-pointer group">
+            <a href="notifikasi_penjual" class="flex flex-col items-center gap-1 cursor-pointer group">
                 <i data-lucide="bell" class="w-6 h-6 text-gray-400 group-hover:text-orange-600 transition"></i>
                 <span class="text-[9px] text-gray-400 group-hover:text-orange-600 transition">Notifikasi</span>
             </a>
@@ -266,7 +228,6 @@ $seller_data = [
     </div>
 
     <script>
-        // Inisialisasi Ikon Lucide
         function initLucide() {
             if (typeof lucide !== 'undefined') {
                 lucide.createIcons();
@@ -278,15 +239,6 @@ $seller_data = [
         window.onload = function() {
             initLucide();
 
-            // Jam Real-time
-            function updateClock() {
-                const now = new Date();
-                const timeStr = String(now.getHours()).padStart(2, '0') + ':' +
-                    String(now.getMinutes()).padStart(2, '0');
-                document.getElementById('current-time').innerText = timeStr;
-            }
-            setInterval(updateClock, 1000);
-            updateClock();
         };
     </script>
 </body>

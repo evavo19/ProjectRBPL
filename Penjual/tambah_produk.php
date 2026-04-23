@@ -41,7 +41,6 @@
             display: none;
         }
 
-        /* Gaya tambahan untuk preview gambar */
         #image-preview-container {
             display: none;
             width: 100%;
@@ -65,7 +64,6 @@
 
     <div class="app-container">
 
-        <!-- HEADER / STATUS BAR -->
         <div class="bg-orange-600 text-white px-6 pt-4 pb-2">
 
             <div class="flex items-center py-4 gap-3">
@@ -76,23 +74,19 @@
             </div>
         </div>
 
-        <!-- FORM CONTENT -->
         <div class="scrollable-content">
             <form action="simpan_data_penjualan.php" method="POST" enctype="multipart/form-data" class="p-4 space-y-4">
 
-                <!-- Upload Gambar dengan Preview -->
                 <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
                     <label class="text-xs font-bold text-gray-800 uppercase block mb-3">Foto Produk</label>
                     <div onclick="document.getElementById('fileInput').click()" 
                          class="relative border-2 border-dashed border-gray-200 rounded-xl h-40 flex flex-col items-center justify-center bg-gray-50 active:bg-gray-100 cursor-pointer transition overflow-hidden">
                         
-                        <!-- Placeholder Ikon -->
                         <div id="placeholder-content" class="flex flex-col items-center">
                             <i data-lucide="camera" class="w-8 h-8 text-orange-500 mb-2"></i>
                             <span class="text-[10px] text-gray-500">Tambah Foto/Video</span>
                         </div>
 
-                        <!-- Container Preview -->
                         <div id="image-preview-container">
                             <img id="image-preview" src="" alt="Preview">
                             <div class="absolute bottom-2 right-2 bg-black/50 text-white p-1 rounded-full">
@@ -104,7 +98,6 @@
                     </div>
                 </div>
 
-                <!-- Detail Produk -->
                 <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 space-y-4">
                     <div class="space-y-1">
                         <label class="text-[10px] font-bold text-gray-400 uppercase">Nama Produk</label>
@@ -119,7 +112,6 @@
                     </div>
                 </div>
 
-                <!-- Info Penjualan -->
                 <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 space-y-4">
                     <div class="flex justify-between items-center border-b border-gray-50 pb-3">
                         <div class="flex items-center gap-2">
@@ -153,7 +145,6 @@
                     </div>
                 </div>
 
-                <!-- Ongkos Kirim -->
                 <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex justify-between items-center">
                     <div class="flex items-center gap-2">
                         <i data-lucide="truck" class="w-4 h-4 text-gray-400"></i>
@@ -162,7 +153,6 @@
                     <span class="text-xs text-gray-400 italic">Atur Berat & Dimensi ></span>
                 </div>
 
-                <!-- Button Submit -->
                 <div class="pt-4">
                     <button type="submit" class="w-full bg-orange-600 text-white font-bold py-3 rounded-full shadow-lg active:scale-95 transition-all">
                         Simpan Produk
@@ -171,7 +161,6 @@
             </form>
         </div>
 
-        <!-- NAVIGASI BAWAH -->
         <div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[389px] h-20 bg-white border-t rounded-t-[25px] rounded-b-[25px] shadow-[0px_-2px_10px_rgba(0,0,0,0.05)] flex justify-around items-center px-5 pb-4 z-50">
             <a href="index_penjual.php" class="flex flex-col items-center gap-1 cursor-pointer group">
                 <i data-lucide="layout-grid" class="w-6 h-6 text-gray-400 group-hover:text-orange-600 transition"></i>
@@ -207,7 +196,6 @@
             }
         }
 
-        // Fungsi untuk Preview Gambar
         function previewImage(event) {
             const file = event.target.files[0];
             const reader = new FileReader();

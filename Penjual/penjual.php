@@ -1,15 +1,13 @@
 <?php
 session_start();
 
-// koneksi database
-require '../config/db.php'; // sesuaikan path
+require '../config/db.php';
 
-// cek apakah sudah login
 if (!isset($_SESSION['penjual_id'])) {
     header("Location: login_penjual.php");
     exit();
 }
-// ambil data dari database berdasarkan ID
+
 $id = $_SESSION['penjual_id'];
 
 $query = "SELECT * FROM profil_penjual WHERE id = '$id'";

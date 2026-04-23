@@ -1,8 +1,4 @@
 <?php
-/**
- * PERBAIKAN NAMA TABEL:
- * Mengubah target tabel dari 'produk' menjadi 'tambah_produk_penjual'
- */
 
 $path_db = '';
 if (file_exists('config/db.php')) {
@@ -21,14 +17,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Error: Variabel koneksi database (\$conn) tidak ditemukan di dalam $path_db.");
     }
 
-    // 1. Ambil Data dari Form
     $name = mysqli_real_escape_string($conn, $_POST['name'] ?? '');
     $desc = mysqli_real_escape_string($conn, $_POST['description'] ?? '');
     $cat  = mysqli_real_escape_string($conn, $_POST['category'] ?? '');
     $prc  = $_POST['price'] ?? 0;
     $qty  = $_POST['quantity'] ?? 0;
 
-    // 2. Olah Gambar
     $image_name = "";
     if (isset($_FILES['product_image']) && $_FILES['product_image']['error'] == 0) {
         $folder = "uploads/";
@@ -45,8 +39,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    // 3. Simpan ke Database
-    // DISINI PERUBAHANNYA: Nama tabel diganti menjadi tambah_produk_penjual
     $query = "INSERT INTO tambah_produk_penjual (nama_produk, deskripsi, kategori, harga, stok, gambar) 
               VALUES ('$name', '$desc', '$cat', '$prc', '$qty', '$image_name')";
 

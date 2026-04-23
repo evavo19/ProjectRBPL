@@ -106,7 +106,6 @@
     <div class="app-container">
 
         <div class="scrollable-content">
-            <!-- LOGO AREA (TANPA BORDER / KOTAK) -->
             <div class="flex flex-col items-center mt-5 mb-8">
                 <div class="flex items-center justify-center mb-4">
                     <img src="shopee-logo.png"
@@ -117,7 +116,6 @@
                 <p class="text-[11px] text-zinc-400 font-medium">Masuk ke Shopee Seller Center</p>
             </div>
 
-            <!-- FORM -->
             <form action="proses_login.php" method="POST" id="loginForm">
                 <div class="input-group">
                     <i data-lucide="mail" class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-500"></i>
@@ -138,14 +136,12 @@
                 </button>
             </form>
 
-            <!-- DIVIDER -->
             <div class="flex items-center gap-4 mb-6">
                 <div class="flex-1 h-[1.5px] bg-zinc-200"></div>
                 <span class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">atau</span>
                 <div class="flex-1 h-[1.5px] bg-zinc-200"></div>
             </div>
 
-            <!-- SOCIAL LOGIN -->
             <div class="space-y-3">
                 <button class="btn-social">
                     <img src="https://www.gstatic.com/images/branding/product/1x/googleg_48dp.png" class="w-5 h-5" alt="Google">
@@ -158,7 +154,6 @@
                 </button>
             </div>
 
-            <!-- FOOTER -->
             <div class="text-center mt-12 mb-10">
                 <p class="text-xs font-medium text-zinc-500">
                     Baru di Shopee? <a href="daftar_penjual.php" class="text-orange-600 font-black cursor-pointer ml-1 uppercase">Daftar</a>

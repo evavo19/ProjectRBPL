@@ -29,7 +29,6 @@
             flex-direction: column;
             overflow: hidden;
             border-radius: 25px;
-            /* Disamakan dengan login */
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
         }
 
@@ -95,7 +94,6 @@
     <div class="app-container">
 
         <div class="scrollable-content">
-            <!-- LOGO AREA (Identik dengan Login) -->
             <div class="flex flex-col items-center mt-5 mb-8">
                 <div class="flex items-center justify-center mb-4">
                     <img src="shopee-logo.png"
@@ -106,7 +104,6 @@
                 <p class="text-[11px] text-zinc-400 font-medium">Lengkapi data untuk mulai berjualan</p>
             </div>
 
-            <!-- FORM FIELDS -->
             <form action="proses_daftar.php" method="POST" class="mt-4">
                 <div class="input-group">
                     <i data-lucide="user" class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-500"></i>
@@ -148,7 +145,6 @@
     </div>
 
     <script>
-        // Inisialisasi Lucide Icons
         function initLucide() {
             if (typeof lucide !== 'undefined') {
                 lucide.createIcons();

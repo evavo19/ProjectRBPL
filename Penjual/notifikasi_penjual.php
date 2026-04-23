@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Logika Backend (Simulasi Database)
- * Memisahkan data berdasarkan kategori Status Pengiriman dan Notifikasi.
- */
-
-// Data khusus perjalanan paket (Status Pengiriman)
 $delivery_status = [
     [
         'order_id' => 'ORD-12345',
@@ -33,7 +27,6 @@ $delivery_status = [
     ]
 ];
 
-// Data notifikasi interaksi (Notifikasi Toko)
 $shop_notifications = [
     [
         'type' => 'rating',
@@ -130,11 +123,8 @@ $shop_notifications = [
 <body>
 
     <div class="app-container">
-
-        <!-- HEADER / STATUS BAR -->
         <div class="bg-orange-600 text-white px-6 pt-4 pb-2 z-20 shadow-md">
 
-            <!-- Title Header -->
             <div class="flex items-center py-4 gap-3">
                 <button onclick="window.history.back()" class="active:opacity-70 transition">
                     <i data-lucide="chevron-left" class="w-6 h-6"></i>
@@ -144,13 +134,11 @@ $shop_notifications = [
         </div>
 
         <div class="scrollable-content">
-            <!-- TAB SELECTOR -->
             <div class="flex bg-white border-b sticky top-0 z-30">
                 <button id="tab-delivery" onclick="switchTab('delivery')" class="flex-1 py-3 text-xs font-bold tab-active transition-all">Status Pengiriman</button>
                 <button id="tab-notif" onclick="switchTab('notif')" class="flex-1 py-3 text-xs font-bold text-gray-400 transition-all">Notifikasi Toko</button>
             </div>
 
-            <!-- SECTION: STATUS PENGIRIMAN -->
             <div id="content-delivery" class="p-4 space-y-4">
                 <div class="bg-orange-50 p-3 rounded-lg flex items-center gap-3 mb-2">
                     <i data-lucide="info" class="w-4 h-4 text-orange-600"></i>
@@ -180,7 +168,6 @@ $shop_notifications = [
                 <?php endforeach; ?>
             </div>
 
-            <!-- SECTION: NOTIFIKASI TOKO -->
             <div id="content-notif" class="hidden p-4 space-y-3">
                 <?php foreach ($shop_notifications as $notif): ?>
                     <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100 flex items-start gap-4 active:bg-gray-50 transition relative">
@@ -202,13 +189,11 @@ $shop_notifications = [
                 <?php endforeach; ?>
             </div>
 
-            <!-- EMPTY STATE SPACER -->
             <div class="py-10 text-center">
                 <p class="text-[10px] text-gray-400 italic">Sudah menampilkan semua data terbaru</p>
             </div>
         </div>
 
-        <!-- BOTTOM NAVIGATION -->
         <div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[389px] h-20 bg-white border-t rounded-t-[25px] rounded-b-[25px] shadow-[0px_-2px_10px_rgba(0,0,0,0.05)] flex justify-around items-center px-5 pb-4 z-50">
             <a href="index_penjual.php" class="flex flex-col items-center gap-1 cursor-pointer group">
                 <i data-lucide="layout-grid" class="w-6 h-6 text-gray-400 group-hover:text-orange-600 transition"></i>

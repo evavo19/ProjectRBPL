@@ -3,11 +3,10 @@ include '../config/db.php';
 
 $nama     = $_POST['nama'];
 $email    = $_POST['email'];
-$password = $_POST['password']; // TANPA HASH
+$password = $_POST['password'];
 $tahun    = $_POST['tahun'];
 $alamat   = $_POST['alamat'];
 
-// cek email sudah ada atau belum
 $cek = mysqli_query($conn, "SELECT * FROM profil_penjual WHERE email='$email'");
 
 if(mysqli_num_rows($cek) > 0){

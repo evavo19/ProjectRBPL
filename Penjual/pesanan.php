@@ -1,9 +1,5 @@
 <?php
 
-/**
- * Logika Backend (Simulasi Database)
- * Data ini biasanya diambil dari database berdasarkan ID produk/pesanan.
- */
 $product_summary = [
     'id' => 'ORD-12345',
     'product_name' => 'Wireless Headphones Premium Edition',
@@ -67,10 +63,8 @@ $product_summary = [
 
     <div class="app-container">
 
-        <!-- HEADER / STATUS BAR -->
         <div class="bg-orange-600 text-white px-6 pt-4 pb-2">
 
-            <!-- Title Header -->
             <div class="flex items-center py-4 gap-3">
                 <button onclick="window.history.back()" class="active:opacity-70 transition">
                     <i data-lucide="chevron-left" class="w-6 h-6"></i>
@@ -80,7 +74,6 @@ $product_summary = [
         </div>
 
         <div class="scrollable-content">
-            <!-- STATUS PESANAN ALERT -->
             <div class="bg-orange-50 border-b border-orange-100 p-4 flex items-center gap-3">
                 <i data-lucide="info" class="w-5 h-5 text-orange-600"></i>
                 <p class="text-[11px] text-orange-800">Pesanan ini sedang menunggu pengemasan. Silakan kirim sebelum batas waktu.</p>
@@ -88,7 +81,6 @@ $product_summary = [
 
             <div class="p-4 space-y-3">
 
-                <!-- CARD: Nama Produk -->
                 <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex justify-between items-start">
                     <div class="space-y-1">
                         <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Nama Produk</p>
@@ -97,7 +89,6 @@ $product_summary = [
                     <button class="bg-orange-600 text-white text-[10px] px-4 py-1.5 rounded-lg font-bold shadow-sm active:scale-95 transition">Edit</button>
                 </div>
 
-                <!-- CARD: Jumlah -->
                 <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex justify-between items-center">
                     <div class="space-y-1">
                         <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Jumlah Pesanan</p>
@@ -106,7 +97,6 @@ $product_summary = [
                     <button class="bg-orange-600 text-white text-[10px] px-4 py-1.5 rounded-lg font-bold shadow-sm active:scale-95 transition">Edit</button>
                 </div>
 
-                <!-- CARD: Alamat -->
                 <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex justify-between items-start">
                     <div class="space-y-1 flex-1 pr-4">
                         <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Alamat Pengiriman</p>
@@ -116,7 +106,6 @@ $product_summary = [
                     <button class="bg-orange-600 text-white text-[10px] px-4 py-1.5 rounded-lg font-bold shadow-sm active:scale-95 transition">Edit</button>
                 </div>
 
-                <!-- CARD: Waktu -->
                 <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 space-y-4">
                     <div class="flex justify-between items-center">
                         <div class="space-y-1">
@@ -134,7 +123,6 @@ $product_summary = [
                     </div>
                 </div>
 
-                <!-- CARD: Rincian Harga -->
                 <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
                     <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-3">Rincian Pembayaran</p>
                     <div class="space-y-2">
@@ -149,7 +137,6 @@ $product_summary = [
                     </div>
                 </div>
 
-                <!-- BUTTON SIMPAN UTAMA -->
                 <div class="pt-4 px-2">
                     <button onclick="saveProduct()" class="w-full bg-orange-600 text-white font-bold py-4 rounded-full shadow-lg active:scale-95 hover:bg-orange-700 transition-all flex items-center justify-center gap-2">
                         <i data-lucide="check-circle" class="w-5 h-5"></i>
@@ -162,7 +149,6 @@ $product_summary = [
             </div>
         </div>
 
-        <!-- BOTTOM NAVIGATION -->
         <div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[389px] h-20 bg-white border-t rounded-t-[25px] rounded-b-[25px] shadow-[0px_-2px_10px_rgba(0,0,0,0.05)] flex justify-around items-center px-5 pb-4 z-50">
             <a href="index_penjual.php" class="flex flex-col items-center gap-1 cursor-pointer group">
                 <i data-lucide="layout-grid" class="w-6 h-6 text-gray-400 group-hover:text-orange-600 transition"></i>
@@ -191,7 +177,6 @@ $product_summary = [
 
     <script>
         function saveProduct() {
-            // Simulasi proses simpan
             const btn = event.currentTarget;
             const originalContent = btn.innerHTML;
 

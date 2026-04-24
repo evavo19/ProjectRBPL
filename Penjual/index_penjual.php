@@ -155,12 +155,12 @@ $seller_data = [
                 </div>
             </div>
 
-            <div class="mt-2 grid grid-cols-3 gap-y-6 p-6 bg-white">
+            <div class="mt-2 grid grid-cols-3 gap-y-6 p-6 bg-white"> 
                 <div class="flex flex-col items-center gap-2">
-                    <div class="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center text-white shadow-md">
+                    <a href="/project_rbpl/Kurir/welcome.php" class="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center text-white shadow-md">
                         <i data-lucide="package" class="w-6 h-6"></i>
-                    </div>
-                    <span class="text-[10px] font-medium text-gray-700">Produk</span>
+                    </a>
+                    <span class="text-[10px] font-medium text-gray-700">Kirim Paket</span>
                 </div>
                 <div class="flex flex-col items-center gap-2">
                     <div class="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center text-white shadow-md">
@@ -213,7 +213,7 @@ $seller_data = [
                 </div>
             </a>
 
-            <a href="notifikasi_penjual" class="flex flex-col items-center gap-1 cursor-pointer group">
+            <a href="notifikasi_penjual.php" class="flex flex-col items-center gap-1 cursor-pointer group">
                 <i data-lucide="bell" class="w-6 h-6 text-gray-400 group-hover:text-orange-600 transition"></i>
                 <span class="text-[9px] text-gray-400 group-hover:text-orange-600 transition">Notifikasi</span>
             </a>

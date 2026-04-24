@@ -166,11 +166,11 @@
                 <i data-lucide="layout-grid" class="w-6 h-6 text-gray-400 group-hover:text-orange-600 transition"></i>
                 <span class="text-[9px] text-gray-400 group-hover:text-orange-600 transition">Dashboard</span>
             </a>
-            <a href="pesanan.php" class="flex flex-col items-center gap-1 cursor-pointer group">
+            <a href="pesanan_penjual.php" class="flex flex-col items-center gap-1 cursor-pointer group">
                 <i data-lucide="shopping-bag" class="w-6 h-6 text-gray-400 group-hover:text-orange-600 transition"></i>
                 <span class="text-[9px] text-gray-400 group-hover:text-orange-600 transition">Produk</span>
             </a>
-            <a href="tambah_produk.php" class="relative -top-4 bg-white p-3 rounded-full shadow-lg cursor-pointer scale-110 transition">
+            <a href="tambah_produk_penjualan.php" class="relative -top-4 bg-white p-3 rounded-full shadow-lg cursor-pointer scale-110 transition">
                 <div class="bg-orange-600 w-12 h-12 rounded-full flex items-center justify-center text-white">
                     <i data-lucide="plus" class="w-6 h-6"></i>
                 </div>

@@ -69,7 +69,7 @@ $shop_notifications = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tracking Pesanan - Shopee Seller</title>
+    <title>Tracking Pesanan & Notifikasi - Penjual</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -199,11 +199,11 @@ $shop_notifications = [
                 <i data-lucide="layout-grid" class="w-6 h-6 text-gray-400 group-hover:text-orange-600 transition"></i>
                 <span class="text-[9px] text-gray-400 group-hover:text-orange-600 transition">Dashboard</span>
             </a>
-            <a href="pesanan.php" class="flex flex-col items-center gap-1 cursor-pointer group">
+            <a href="pesanan_penjual.php" class="flex flex-col items-center gap-1 cursor-pointer group">
                 <i data-lucide="shopping-bag" class="w-6 h-6 text-gray-400 group-hover:text-orange-600 transition"></i>
                 <span class="text-[9px] text-gray-400 group-hover:text-orange-600 transition">Produk</span>
             </a>
-            <a href="tambah_produk.php" class="relative -top-4 bg-white p-3 rounded-full shadow-lg cursor-pointer hover:scale-105 transition">
+            <a href="tambah_produk_penjualan.php" class="relative -top-4 bg-white p-3 rounded-full shadow-lg cursor-pointer hover:scale-105 transition">
                 <div class="bg-orange-600 w-12 h-12 rounded-full flex items-center justify-center text-white">
                     <i data-lucide="plus" class="w-6 h-6"></i>
                 </div>

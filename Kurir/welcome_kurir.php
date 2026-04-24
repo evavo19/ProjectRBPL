@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['start'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kurir Paket Last Mile</title>
+    <title>Kurir Paket</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <script>
@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['start'])) {
             theme: {
                 extend: {
                     colors: {
-                        brand: '#EF4C29', // Warna oranye disesuaikan dengan Tim Planner
+                        brand: '#EF4C29',
                     }
                 }
             }
@@ -121,24 +121,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['start'])) {
 
     <div class="app-container">
 
-        <!-- STATUS BAR (Identik dengan Tim Planner) -->
         <div class="flex justify-between items-center px-8 pt-6 pb-2 bg-white sticky top-0 z-50">
-            <span id="jam" class="text-xs font-semibold font-poppins"></span>
-            <div class="flex items-center gap-1.5">
-                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"></path>
-                </svg>
-                <div class="w-5 h-2.5 border border-black rounded-[2px] p-[1px] flex justify-start items-center">
-                    <div class="bg-black h-full w-[70%] rounded-[1px]"></div>
-                </div>
-            </div>
         </div>
 
         <?php if ($view === 'onboarding'): ?>
-            <!-- HALAMAN: ONBOARDING -->
             <div class="flex-1 flex flex-col px-6 pb-10 animate-fadeIn">
 
-                <!-- Logo & Title Section -->
                 <div class="flex items-center gap-3 mt-4">
                     <div class="w-10 h-8 bg-brand rounded flex items-center justify-center text-white shadow-md">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -150,7 +138,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['start'])) {
                     </h1>
                 </div>
 
-                <!-- Gambar Ilustrasi (Mengikuti style shadow & rounded Middle Mile) -->
                 <div class="flex-1 flex items-center justify-center px-4">
                     <div class="relative w-full aspect-square">
                         <div class="absolute inset-0 bg-orange-100 rounded-full blur-3xl opacity-30"></div>
@@ -162,12 +149,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['start'])) {
                     </div>
                 </div>
 
-                <!-- Text Content & Action -->
                 <div class="text-center space-y-3">
                     <h2 class="text-2xl font-bold font-poppins text-gray-900 leading-tight">Kelola Pengiriman Anda</h2>
                     <p class="text-gray-500 text-sm leading-relaxed px-2">
                         Lacak paket, rute, dan pengiriman anda secara efisien dengan mudah </p>
-                    <a href="pickup_paket.php"
+                    <a href="pickup_paket_kurir.php"
                         class="block w-full mt-4 py-4 text-center bg-brand text-white font-bold font-montserrat rounded-full">
                         Mulai
                     </a>
@@ -175,7 +161,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['start'])) {
             </div>
 
         <?php elseif ($view === 'dashboard'): ?>
-            <!-- Placeholder untuk Dashboard -->
             <div class="p-6">
                 <h1 class="text-xl font-bold font-poppins">Kurir</h1>
                 <p class="text-sm text-gray-500">Selamat datang, Kurir.</p>
@@ -194,12 +179,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['start'])) {
 
             document.getElementById("jam").innerText = jam + ":" + menit;
         }
-
-        // jalankan pertama kali
-        updateJam();
-
-        // update tiap 1 detik
-        setInterval(updateJam, 1000);
     </script>
 </body>
 

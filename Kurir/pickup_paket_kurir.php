@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistem Kurir Last Mile</title>
+    <title>Pickup Paket - Kurir</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -135,7 +135,7 @@
 <body>
 
     <div class="app-container">
-        <!-- MODAL SCAN -->
+        <!-- SCAN OVERLAY -->
         <div id="scan-view" class="scan-overlay">
             <div class="scanner-box">
                 <div class="scanner-line"></div>
@@ -145,33 +145,10 @@
             <button onclick="closeScan()" class="mt-10 bg-white/10 hover:bg-white/20 text-white px-8 py-3 rounded-2xl border border-white/20 backdrop-blur-md">Batal</button>
         </div>
 
-        <!-- STATUS BAR: BG PUTIH, BAR HITAM -->
-        <div class="bg-white px-6 pt-3 pb-2 sticky top-0 z-50 border-b border-gray-50">
-            <div class="flex justify-between items-center px-0 pt-1 text-black">
-                <!-- JAM -->
-                <span class="text-xs font-semibold font-poppins" id="current-time">00:00</span>
-
-                <!-- ICON -->
-                <div class="flex items-center gap-1.5">
-                    <!-- SIGNAL -->
-                    <svg class="w-3.5 h-3.5 text-black" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"></path>
-                    </svg>
-
-                    <!-- BATTERY -->
-                    <div class="flex items-center">
-                        <div class="w-5 h-2.5 border border-black rounded-[2px] p-[1px] flex items-center">
-                            <div class="bg-black h-full w-[70%] rounded-[1px]"></div>
-                        </div>
-                        <div class="w-[2px] h-1 bg-black ml-[1px] rounded-sm"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!-- VIEW: PICKUP -->
         <div id="view-pickup" class="view-content animate-up">
-            <div class="px-6 py-4">
+            <!-- Menambahkan padding top lebih besar (pt-8) karena status bar dihapus -->
+            <div class="px-6 pt-8 pb-4">
                 <div class="flex justify-between items-center mb-1">
                     <h1 class="text-[10px] font-bold font-montserrat text-brand uppercase tracking-[0.2em]">Tugas Penjemputan</h1>
                     <button onclick="openScan()" class="p-2 bg-orange-50 rounded-xl text-brand hover:bg-brand hover:text-white transition-all duration-300">
@@ -249,7 +226,7 @@
 
         <!-- VIEW: HISTORY -->
         <div id="view-history" class="view-content hidden-view animate-up">
-            <div class="px-6 py-4">
+            <div class="px-6 pt-8 pb-4">
                 <h1 class="text-[10px] font-bold font-montserrat text-brand uppercase tracking-[0.2em]">Data Riwayat</h1>
                 <h2 class="text-2xl font-bold font-poppins text-gray-900 leading-tight">Selesai Hari Ini</h2>
 
@@ -384,14 +361,6 @@
             }, 500);
         }
 
-        function updateJam() {
-            const now = new Date();
-            const jamStr = now.getHours().toString().padStart(2, '0') + ":" + now.getMinutes().toString().padStart(2, '0');
-            document.getElementById("current-time").innerText = jamStr;
-        }
-
-        setInterval(updateJam, 1000);
-        updateJam();
         lucide.createIcons();
     </script>
 </body>

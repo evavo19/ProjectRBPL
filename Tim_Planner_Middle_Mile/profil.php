@@ -91,7 +91,7 @@ $userData = [
 
         .profile-header-bg {
             background: linear-gradient(180deg, #EF4C29 0%, #f87171 100%);
-            height: 280px;
+            height: 250px;
             width: 100%;
             position: absolute;
             top: 0;
@@ -106,21 +106,19 @@ $userData = [
 
     <div class="app-container">
         <div class="profile-header-bg"></div>
-        
+
         <div class="sticky-header-content pt-0 px-0">
-            <div class="flex justify-between items-center px-8 pt-6 pb-2 relative z-50 text-white">
-                <span class="text-xs font-semibold"><?php echo date('H:i'); ?></span>
-                <div class="flex items-center gap-1.5">
-                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"></path>
-                    </svg>
-                    <div class="w-5 h-2.5 border border-white rounded-[2px] p-[1px] flex justify-start items-center">
-                        <div class="bg-white h-full w-[70%] rounded-[1px]"></div>
-                    </div>
-                </div>
-            </div>
 
             <div class="flex-1 overflow-y-auto no-scrollbar relative z-10 px-6 mt-6 animate-fadeIn">
+
+                <div class="flex items-center mb-4">
+                    <a href="dashboard.php" class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                    </a>
+                </div>
+
                 <div class="flex flex-col items-center">
                     <div class="relative">
                         <div class="w-32 h-32 rounded-full border-4 border-white shadow-xl overflow-hidden bg-gray-100">
@@ -136,7 +134,7 @@ $userData = [
                     <p class="text-orange-50 text-xs font-medium opacity-90 tracking-widest uppercase">ID: MM-202409</p>
                 </div>
 
-                <div class="mt-8 space-y-4 pb-10">
+                <div class="mt-16 space-y-4 pb-10">
                     <div class="space-y-1.5">
                         <label class="text-[10px] font-bold font-poppins text-gray-400 ml-1 uppercase tracking-wider">Email Address</label>
                         <div class="w-full bg-white border border-gray-100 p-4 rounded-2xl shadow-sm flex items-center gap-3">

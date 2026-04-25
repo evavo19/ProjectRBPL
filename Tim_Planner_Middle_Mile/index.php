@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['start'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Index - Tim Planner Middle Mile</title>
+  <title>Index Halaman Awal - Tim Planner Middle Mile</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <script>
@@ -124,21 +124,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['start'])) {
 
   <div class="app-container">
 
-    <div class="flex justify-between items-center px-8 pt-6 pb-2 bg-white sticky top-0 z-50">
-      <span class="text-xs font-semibold"><?php echo date('H:i'); ?></span>
-      <div class="flex items-center gap-1.5">
-        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"></path>
-        </svg>
-        <div class="w-5 h-2.5 border border-black rounded-[2px] p-[1px] flex justify-start items-center">
-          <div class="bg-black h-full w-[70%] rounded-[1px]"></div>
-        </div>
-      </div>
-    </div>
-
     <?php if ($view === 'onboarding'): ?>
       <div class="flex-1 flex flex-col px-6 pb-10 animate-fadeIn">
-        <div class="flex items-center gap-3 mt-4">
+        <div class="flex items-center gap-3 mt-8">
           <div class="w-10 h-8 bg-brand rounded flex items-center justify-center text-white shadow-md">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1m-4 0h1m-5-1v2m14-2v2"></path>

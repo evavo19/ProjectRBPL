@@ -22,10 +22,6 @@ class PerencanaanService
             new Hub("Hub C", 20),
             new Hub("Hub D", 63),
             new Hub("Hub E", 26),
-            new Hub("Hub F", 42),
-            new Hub("Hub G", 15),
-            new Hub("Hub H", 19),
-            new Hub("Hub I", 20),
         ];
     }
 }
@@ -40,7 +36,7 @@ $dataHub = $service->getDataHub();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perencanaan Armada  - Tim Planner Middle Mile</title>
+    <title>Perencanaan - Tim Planner Middle Mile</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
@@ -119,27 +115,18 @@ $dataHub = $service->getDataHub();
 
     <div class="app-container no-scrollbar ">
 
-        <div class="flex justify-between items-center px-8 pt-6 pb-2 bg-white sticky top-0 z-50">
-            <span class="text-xs font-semibold"><?php echo date('H:i'); ?></span>
-            <div class="flex items-center gap-1.5">
-                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"></path>
-                </svg>
-                <div class="w-5 h-2.5 border border-black rounded-[2px] p-[1px] flex justify-start items-center">
-                    <div class="bg-black h-full w-[70%] rounded-[1px]"></div>
-                </div>
+        <div class="px-5 flex justify-between items-center mt-8">
+            <div class="flex items-center gap-3">
+                <a href="dashboard.php" class="w-9 h-9 bg-gray-100 rounded-full flex items-center justify-center text-gray-700 hover:bg-gray-200 active:scale-95 transition-all">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                </a>
+                <h1 class="text-lg font-bold font-montserrat uppercase text-gray-800">Perencana Armada</h1>
             </div>
-        </div>
-
-        <div class="flex justify-between items-center px-5 mt-2">
-            <img src="assets/ceklis.png" class="w-9 h-9">
-
-            <h1 class="text-lg font-bold font-montserrat">Perencana Armada</h1>
-
             <a href="profil.php">
                 <img src="assets/profil.png"
-                    class="w-8 h-8 rounded-full object-cover cursor-pointer 
-                transition-all hover:scale-105 active:scale-95">
+                    class="w-8 h-8 rounded-full object-cover cursor-pointer transition-all hover:scale-105 active:scale-95">
             </a>
         </div>
 
@@ -149,20 +136,45 @@ $dataHub = $service->getDataHub();
                 <img src="assets/peta.png" class="w-full h-40 object-cover">
             </div>
 
-            <div class="flex items-center gap-2">
-                <div class="w-20 h-1 bg-brand"></div>
-                <div class="w-20 h-1 bg-gray-300"></div>
-                <div class="w-3 h-3 bg-brand rounded-full"></div>
-            </div>
-
             <div>
-                <h2 class="text-xs font-bold font-poppins mb-2">Parameter yang Dapat Disesuaikan</h2>
-                <p class="text-xs text-gray-500 mb-2 font-poppins">Prioritas Rute</p>
+                <h2 class="text-xs font-bold font-poppins mb-3">Parameter yang Dapat Disesuaikan</h2>
 
-                <div class="flex items-center gap-2">
-                    <div class="w-20 h-1 bg-brand"></div>
-                    <div class="w-20 h-1 bg-gray-300"></div>
-                    <div class="w-3 h-3 bg-brand rounded-full"></div>
+                <div class="space-y-3">
+                    <div>
+                        <div class="flex justify-between">
+                            <p class="text-xs text-gray-500 font-poppins">Prioritas Rute</p>
+                            <span class="text-xs text-brand font-bold" id="nilai-rute">50</span>
+                        </div>
+                        <input type="range" min="0" max="100" value="50" class="w-full accent-brand cursor-pointer"
+                            oninput="document.getElementById('nilai-rute').textContent = this.value">
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between">
+                            <p class="text-xs text-gray-500 font-poppins">Prioritas Waktu</p>
+                            <span class="text-xs text-brand font-bold" id="nilai-waktu">50</span>
+                        </div>
+                        <input type="range" min="0" max="100" value="50" class="w-full accent-brand cursor-pointer"
+                            oninput="document.getElementById('nilai-waktu').textContent = this.value">
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between">
+                            <p class="text-xs text-gray-500 font-poppins">Kapasitas Muatan</p>
+                            <span class="text-xs text-brand font-bold" id="nilai-kapasitas">50</span>
+                        </div>
+                        <input type="range" min="0" max="100" value="50" class="w-full accent-brand cursor-pointer"
+                            oninput="document.getElementById('nilai-kapasitas').textContent = this.value">
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between">
+                            <p class="text-xs text-gray-500 font-poppins">Jarak Tempuh</p>
+                            <span class="text-xs text-brand font-bold" id="nilai-jarak">50</span>
+                        </div>
+                        <input type="range" min="0" max="100" value="50" class="w-full accent-brand cursor-pointer"
+                            oninput="document.getElementById('nilai-jarak').textContent = this.value">
+                    </div>
                 </div>
             </div>
 

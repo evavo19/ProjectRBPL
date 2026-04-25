@@ -82,27 +82,19 @@ function formatRibuan($n)
 <body class="font-poppins">
 
     <div class="app-container no-scrollbar">
-        <div class="flex justify-between items-center px-8 pt-6 pb-2 bg-white sticky top-0 z-[100] border-b border-gray-50 rounded-t-[25px]">
-            <span class="text-xs font-semibold"><?php echo date('H:i'); ?></span>
-            <div class="flex items-center gap-1.5">
-                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"></path>
-                </svg>
-                <div class="w-5 h-2.5 border border-black rounded-[2px] p-[1px] flex justify-start items-center">
-                    <div class="bg-black h-full w-[70%] rounded-[1px]"></div>
-                </div>
-            </div>
-        </div>
 
-        <div class="px-5 flex justify-between items-center mt-4">
+        <div class="px-5 flex justify-between items-center mt-8">
             <div class="flex items-center gap-3">
-                <img src="assets/ceklis.png" alt="Logo" class="w-9 h-9 object-contain">
+                <a href="index.php" class="w-9 h-9 bg-gray-100 rounded-full flex items-center justify-center text-gray-700 hover:bg-gray-200 active:scale-95 transition-all">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                </a>
                 <h1 class="text-lg font-bold font-montserrat uppercase text-gray-800">Perencana Armada</h1>
             </div>
             <a href="profil.php">
                 <img src="assets/profil.png"
-                    class="w-8 h-8 rounded-full object-cover cursor-pointer 
-                transition-all hover:scale-105 active:scale-95">
+                    class="w-8 h-8 rounded-full object-cover cursor-pointer transition-all hover:scale-105 active:scale-95">
             </a>
         </div>
 

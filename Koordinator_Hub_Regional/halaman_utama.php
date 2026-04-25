@@ -45,20 +45,6 @@ $stats = [
     <div class="w-full max-w-[384px] h-screen bg-white shadow-2xl relative flex flex-col md:rounded-[25px] overflow-hidden">
 
         <div class="flex-none bg-orange-600 z-50">
-            <div class="px-6 pt-5 pb-2">
-                <div class="flex justify-between items-center text-white">
-                    <span class="text-xs font-semibold" id="current-time">09:41</span>
-                    <div class="flex items-center gap-1.5">
-                        <i class="fas fa-signal text-[10px]"></i>
-                        <div class="flex items-center">
-                            <div class="w-5 h-2.5 border border-white rounded-[2px] p-[1px] flex items-center">
-                                <div class="bg-white h-full w-[70%] rounded-[1px]"></div>
-                            </div>
-                            <div class="w-[2px] h-1 bg-white ml-[1px] rounded-sm"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <div class="px-6 py-6 pb-10">
                 <h1 class="text-white text-2xl font-bold font-montserrat tracking-tight">Halaman Utama</h1>
@@ -98,13 +84,13 @@ $stats = [
             </div>
 
             <div class="grid grid-cols-2 gap-4">
-                <div onclick="location.href='#'" class="bg-orange-600 rounded-2xl p-4 h-40 flex flex-col justify-between shadow-lg shadow-orange-100 active:scale-95 transition-all cursor-pointer">
+                <div onclick="location.href='rekapan_inspeksi.php'" class="bg-orange-600 rounded-2xl p-4 h-40 flex flex-col justify-between shadow-lg shadow-orange-100 active:scale-95 transition-all cursor-pointer">
                     <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
-                        <i class="fas fa-users text-white text-xl"></i>
+                        <i class="fas fa-file-invoice text-white text-xl"></i>
                     </div>
                     <div>
-                        <p class="text-white font-bold font-montserrat text-sm leading-tight">Detail</p>
-                        <p class="text-white font-bold font-montserrat text-sm leading-tight">Driver</p>
+                        <p class="text-white font-bold font-montserrat text-sm leading-tight">Rekap</p>
+                        <p class="text-white font-bold font-montserrat text-sm leading-tight">Inspeksi</p>
                     </div>
                 </div>
 

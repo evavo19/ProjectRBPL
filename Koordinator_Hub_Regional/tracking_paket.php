@@ -34,20 +34,6 @@ $packages = [
     <div class="w-full max-w-[384px] h-screen bg-white shadow-2xl relative flex flex-col md:rounded-[25px] overflow-hidden">
         
         <div class="flex-none bg-orange-600 z-50">
-            <div class="px-6 pt-5 pb-2">
-                <div class="flex justify-between items-center text-white">
-                    <span class="text-xs font-semibold" id="current-time">09:41</span>
-                    <div class="flex items-center gap-1.5">
-                        <i class="fas fa-signal text-[10px]"></i>
-                        <div class="flex items-center">
-                            <div class="w-5 h-2.5 border border-white rounded-[2px] p-[1px] flex items-center">
-                                <div class="bg-white h-full w-[70%] rounded-[1px]"></div>
-                            </div>
-                            <div class="w-[2px] h-1 bg-white ml-[1px] rounded-sm"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <div class="px-6 py-4 flex items-center gap-4 border-b border-orange-500/30">
                 <a href="halaman_utama.php" class="p-2 -ml-2 hover:bg-orange-700 rounded-full transition-colors">
@@ -88,7 +74,7 @@ $packages = [
                                 </div>
                             </div>
                             
-                            <button onclick="window.location.href='konfirmasi_paket.php'" class="px-5 py-2.5 bg-orange-600 text-white text-[11px] font-bold rounded-xl shadow-lg shadow-orange-100 active:scale-95 transition-all">
+                            <button onclick="window.location.href='#'" class="px-5 py-2.5 bg-orange-600 text-white text-[11px] font-bold rounded-xl shadow-lg shadow-orange-100 active:scale-95 transition-all">
                                 View Details
                             </button>
                         </div>

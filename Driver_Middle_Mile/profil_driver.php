@@ -1,9 +1,5 @@
 <?php
 
-/**
- * BACKEND LOGIC (PHP)
- * Simulasi data user yang diambil dari database.
- */
 $userData = [
     'nama' => 'Fadhil Ramadhan',
     'email' => 'fadhilrama@gmail.com',
@@ -109,14 +105,11 @@ $userData = [
 
     <div class="app-container">
 
-        <!-- HEADER BACKGROUND -->
         <div class="profile-header-bg"></div>
 
         <div class="sticky-header-content pt-0 px-0">
 
-            <!-- MAIN SCROLLABLE CONTENT -->
             <div class="flex-1 overflow-y-auto no-scrollbar relative z-10 px-6 mt-6 animate-fadeIn pb-28">
-                <!-- PROFILE INFO -->
                 <div class="flex flex-col items-center">
                     <div class="relative">
                         <div class="w-32 h-32 rounded-full border-4 border-white shadow-xl overflow-hidden bg-gray-100">
@@ -132,9 +125,7 @@ $userData = [
                     <p class="text-orange-50 text-xs font-medium opacity-90 tracking-widest uppercase">ID: Driver-202011</p>
                 </div>
 
-                <!-- INFORMATION LIST -->
                 <div class="mt-20 space-y-4 pb-10">
-                    <!-- EMAIL -->
                     <div class="space-y-1.5">
                         <label class="text-[10px] font-bold font-poppins text-gray-400 ml-1 uppercase tracking-wider">Email Address</label>
                         <div class="w-full bg-white border border-gray-100 p-4 rounded-2xl shadow-sm flex items-center gap-3">
@@ -147,7 +138,6 @@ $userData = [
                         </div>
                     </div>
 
-                    <!-- JABATAN -->
                     <div class="space-y-1.5">
                         <label class="text-[10px] font-bold font-poppins text-gray-400 ml-1 uppercase tracking-wider">Position</label>
                         <div class="w-full bg-white border border-gray-100 p-4 rounded-2xl shadow-sm flex items-center gap-3">
@@ -160,7 +150,6 @@ $userData = [
                         </div>
                     </div>
 
-                    <!-- ALAMAT -->
                     <div class="space-y-1.5">
                         <label class="text-[10px] font-bold font-poppins text-gray-400 ml-1 uppercase tracking-wider">Alamat</label>
                         <div class="w-full bg-white border border-gray-100 p-4 rounded-2xl shadow-sm flex items-center gap-3">
@@ -177,21 +166,18 @@ $userData = [
             </div>
         </div>
 
-        <!-- BOTTOM TAB NAVIGATION -->
         <div class="absolute bottom-0 left-0 right-0 bg-white h-20 shadow-[0_-10px_30px_rgba(0,0,0,0.03)] flex justify-around items-center px-10 rounded-t-[35px] border-t border-gray-50 z-50">
             <!-- Tombol Home (Abu-abu) -->
-            <a href="status_pengiriman.php" class="text-gray-400 hover:text-brand transition-colors p-3">
+            <a href="status_pengiriman_driver.php" class="text-gray-400 hover:text-brand transition-colors p-3">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
                 </svg>
             </a>
-            <!-- Tombol List AKTIF (Warna Oranye) -->
-            <a href="pengiriman.php" class="text-gray-400 hover:text-brand transition-colors p-3">
+            <a href="pengiriman_driver.php" class="text-gray-400 hover:text-brand transition-colors p-3">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
                 </svg>
             </a>
-            <!-- Tombol Profile (Abu-abu) -->
             <button class="text-brand transition-all scale-110 p-3">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />

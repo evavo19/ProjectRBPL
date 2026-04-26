@@ -1,9 +1,5 @@
 <?php
 
-/**
- * BACKEND LOGIC (PHP)
- * Simulasi data pengiriman untuk Driver Middle Mile
- */
 $deliveryData = [
     'rute_saat_ini' => 'Dalam Perjalanan',
     'checkpoint_berikutnya' => 'Hub A',
@@ -33,7 +29,7 @@ $deliveryData = [
             theme: {
                 extend: {
                     colors: {
-                        brand: '#EF4C29', // Merah sesuai desain
+                        brand: '#EF4C29', 
                     }
                 }
             }
@@ -86,7 +82,7 @@ $deliveryData = [
 
         <div class="sticky-header-content pt-0 px-0 sticky top-0 z-50 bg-white">
             <div class="py-4 flex items-center justify-center relative mt-8">
-                <a href="index.php" class="absolute left-5 w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-700 hover:bg-gray-200 active:scale-95 transition-all">
+                <a href="index_driver.php" class="absolute left-5 w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-700 hover:bg-gray-200 active:scale-95 transition-all">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                     </svg>
@@ -95,15 +91,11 @@ $deliveryData = [
             </div>
         </div>
 
-        <!-- SCROLLABLE CONTENT -->
         <div class="flex-1 overflow-y-auto no-scrollbar px-6 pt-4 pb-20">
-            <!-- ROUTE SUMMARY CARD -->
             <div class="status-card p-5 mt-2 mb-8 relative">
                 <div class="grid grid-cols-2 gap-4 relative">
-                    <!-- Vertical Divider -->
                     <div class="absolute left-1/2 top-2 bottom-2 w-[1px] bg-gray-300 -ml-[0.5px]"></div>
 
-                    <!-- Left Side -->
                     <div class="text-center">
                         <p class="text-brand text-[10px] font-bold uppercase tracking-wide">Rute Saat Ini</p>
                         <p class="text-black text-sm font-bold mt-1"><?php echo $deliveryData['rute_saat_ini']; ?></p>
@@ -114,7 +106,6 @@ $deliveryData = [
                         </div>
                     </div>
 
-                    <!-- Right Side -->
                     <div class="text-center">
                         <p class="text-brand text-[10px] font-bold uppercase tracking-wide leading-tight">Pos Pemeriksaan Berikutnya</p>
                         <p class="text-black text-sm font-bold mt-1"><?php echo $deliveryData['checkpoint_berikutnya']; ?></p>
@@ -127,7 +118,6 @@ $deliveryData = [
                 </div>
             </div>
 
-            <!-- PACKAGE LIST -->
             <div class="space-y-4">
                 <?php foreach ($deliveryData['daftar_paket'] as $paket): ?>
                     <div class="bg-white rounded-xl p-4 flex justify-between items-center shadow-[0_4px_10px_rgba(0,0,0,0.05)] border border-gray-50">
@@ -137,9 +127,8 @@ $deliveryData = [
                 <?php endforeach; ?>
             </div>
 
-            <!-- UPDATE STATUS BUTTON (Floating above nav) -->
             <div class="mt-10 mb-5">
-                <a href="status_pengiriman.php"
+                <a href="status_pengiriman_driver.php"
                     onclick="this.innerText='Memproses...'"
                     class="block w-full text-center py-4 bg-brand text-white rounded-lg font-bold text-lg shadow-lg active:scale-95 transition-transform">
                     Perbarui Status
@@ -147,21 +136,18 @@ $deliveryData = [
             </div>
         </div>
 
-        <!-- BOTTOM NAVIGATION -->
         <div class="absolute bottom-0 left-0 right-0 bg-white h-20 shadow-[0_-10px_30px_rgba(0,0,0,0.03)] flex justify-around items-center px-10 rounded-t-[35px] border-t border-gray-50 z-50">
-            <a href="status_pengiriman.php" class="text-gray-400 hover:text-brand transition-colors p-3">
+            <a href="status_pengiriman_driver.php" class="text-gray-400 hover:text-brand transition-colors p-3">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
                 </svg>
             </a>
-            <!-- Tombol List AKTIF (Warna Oranye) -->
             <button class="text-brand transition-all scale-110 p-3">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
                 </svg>
             </button>
-            <!-- Tombol Profile (Abu-abu) -->
-            <a href="profil.php" class="text-gray-400 hover:text-brand transition-colors p-3">
+            <a href="profil_driver.php" class="text-gray-400 hover:text-brand transition-colors p-3">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>

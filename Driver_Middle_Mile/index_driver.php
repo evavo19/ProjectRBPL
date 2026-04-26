@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['start'])) {
-    header("Location: status_pengiriman.php");
+    header("Location: status_pengiriman_driver.php");
     exit();
 }
 
@@ -23,7 +23,7 @@ $driverData = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Driver - Middle Mile</title>
+    <title>Dashboard - Driver Middle Mile</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <script>

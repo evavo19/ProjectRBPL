@@ -114,20 +114,6 @@ $userData = [
 
         <div class="sticky-header-content pt-0 px-0">
 
-
-            <!-- STATUS BAR -->
-            <div class="flex justify-between items-center px-8 pt-6 pb-2 relative z-50 text-white">
-                <span class="text-xs font-semibold"><?php echo date('H:i'); ?></span>
-                <div class="flex items-center gap-1.5">
-                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"></path>
-                    </svg>
-                    <div class="w-5 h-2.5 border border-white rounded-[2px] p-[1px] flex justify-start items-center">
-                        <div class="bg-white h-full w-[70%] rounded-[1px]"></div>
-                    </div>
-                </div>
-            </div>
-
             <!-- MAIN SCROLLABLE CONTENT -->
             <div class="flex-1 overflow-y-auto no-scrollbar relative z-10 px-6 mt-6 animate-fadeIn pb-28">
                 <!-- PROFILE INFO -->
@@ -147,8 +133,7 @@ $userData = [
                 </div>
 
                 <!-- INFORMATION LIST -->
-                <div class="mt-8 space-y-4 pb-10">
-
+                <div class="mt-20 space-y-4 pb-10">
                     <!-- EMAIL -->
                     <div class="space-y-1.5">
                         <label class="text-[10px] font-bold font-poppins text-gray-400 ml-1 uppercase tracking-wider">Email Address</label>

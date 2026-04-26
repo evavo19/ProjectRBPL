@@ -1,13 +1,9 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['start'])) {
-    header("Location: pengiriman.php");
+    header("Location: status_pengiriman.php");
     exit();
 }
 
-/**
- * BACKEND LOGIC (PHP)
- * Simulasi data dari Database untuk Driver
- */
 $driverData = [
     'nama' => 'Malikha Aprilia',
     'peran' => 'DRIVER MIDDLE MILE',
@@ -67,7 +63,6 @@ $driverData = [
         .app-container {
             width: 390px;
             height: 844px;
-            /* Tinggi tetap simulasi iPhone */
             max-height: 100vh;
             background-color: #FFFFFF;
             border-radius: 25px;
@@ -94,21 +89,7 @@ $driverData = [
     <div class="app-container">
 
         <div class="sticky-header-content pt-0 px-0">
-            <!-- STATUS BAR -->
-            <div class="flex justify-between items-center px-8 pt-6 pb-2 text-black font-poppins">
-                <span class="text-xs font-bold"><?php echo date('H:i'); ?></span>
-                <div class="flex items-center gap-1.5">
-                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"></path>
-                    </svg>
-                    <div class="w-5 h-2.5 border border-black rounded-[2px] p-[1px] flex justify-start items-center">
-                        <div class="bg-black h-full w-[70%] rounded-[1px]"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- MENU HEADER -->
-            <div class="px-6 py-4 flex items-center gap-4 border-b border-gray-50">
+            <div class="px-6 py-4 flex items-center gap-4 border-b border-gray-50 mt-8">
                 <div class="w-12 h-12 bg-brand rounded-full flex items-center justify-center text-white shadow-md">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm12 0c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zM18 9l2.5 3H17V9h1z" />
@@ -118,10 +99,8 @@ $driverData = [
             </div>
         </div>
 
-        <!-- AREA SCROLL (Bisa di-scroll jika konten panjang) -->
         <div class="sticky-header-content pt-0 px-0 px-4 pt-4 pb-32">
 
-            <!-- GAMBAR TUGAS (Tinggi dikurangi sedikit agar pas) -->
             <div class="space-y-3 mb-6">
                 <div class="rounded-2xl overflow-hidden shadow-sm border border-gray-100">
                     <img src="assets/driverindex.png" class="w-full h-40 object-cover" alt="Driver">
@@ -131,7 +110,6 @@ $driverData = [
                 </div>
             </div>
 
-            <!-- INFO TUGAS -->
             <div class="text-center px-4 mb-8">
                 <h2 class="text-2xl font-bold font-poppins text-gray-900 mb-4">
                     <?php echo $driverData['tugas_aktif']['judul']; ?>
@@ -141,7 +119,6 @@ $driverData = [
                 </p>
             </div>
 
-            <!-- TOMBOL MULAI -->
             <form method="POST">
                 <button name="start" type="submit" class="w-full py-4 bg-brand text-white rounded-full font-bold font-montserrat shadow-lg shadow-orange-200 hover:bg-orange-600 active:scale-95 transition-transform">
                     Mulai

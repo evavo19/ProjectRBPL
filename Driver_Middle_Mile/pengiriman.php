@@ -11,11 +11,10 @@ $deliveryData = [
     'paket_terkirim' => 15,
     'daftar_paket' => [
         ['nama' => 'Package A', 'lokasi' => 'Bantul'],
-        ['nama' => 'Package E', 'lokasi' => 'Bantul'],
-        ['nama' => 'Package F', 'lokasi' => 'Bantul'],
-        ['nama' => 'Package B', 'lokasi' => 'Sleman'],
-        ['nama' => 'Package G', 'lokasi' => 'Sleman'],
-        ['nama' => 'Package H', 'lokasi' => 'Sleman'],
+        ['nama' => 'Package B', 'lokasi' => 'Bantul'],
+        ['nama' => 'Package C', 'lokasi' => 'Bantul'],
+        ['nama' => 'Package D', 'lokasi' => 'Sleman'],
+        ['nama' => 'Package E', 'lokasi' => 'Sleman'],
     ]
 ];
 ?>
@@ -53,7 +52,8 @@ $deliveryData = [
 
         .app-container {
             width: 390px;
-            height: 844px;
+            height: 100vh;
+            max-height: 844px;
             background-color: #FFFFFF;
             border-radius: 30px;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
@@ -61,6 +61,7 @@ $deliveryData = [
             display: flex;
             flex-direction: column;
             position: relative;
+            isolation: isolate;
         }
 
         .no-scrollbar::-webkit-scrollbar {
@@ -84,21 +85,12 @@ $deliveryData = [
     <div class="app-container">
 
         <div class="sticky-header-content pt-0 px-0 sticky top-0 z-50 bg-white">
-            <!-- STATUS BAR -->
-            <div class="flex justify-between items-center px-8 pt-6 pb-2 text-black">
-                <span class="text-xs font-bold"><?php echo date('H:i'); ?></span>
-                <div class="flex items-center gap-1.5">
-                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"></path>
+            <div class="py-4 flex items-center justify-center relative mt-8">
+                <a href="index.php" class="absolute left-5 w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-700 hover:bg-gray-200 active:scale-95 transition-all">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                     </svg>
-                    <div class="w-5 h-2.5 border border-black rounded-[2px] p-[1px] flex justify-start items-center">
-                        <div class="bg-black h-full w-[70%] rounded-[1px]"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Header Title -->
-            <div class="py-4 text-center relative">
+                </a>
                 <h1 class="text-xl font-bold text-black">Pengiriman</h1>
             </div>
         </div>
@@ -157,7 +149,6 @@ $deliveryData = [
 
         <!-- BOTTOM NAVIGATION -->
         <div class="absolute bottom-0 left-0 right-0 bg-white h-20 shadow-[0_-10px_30px_rgba(0,0,0,0.03)] flex justify-around items-center px-10 rounded-t-[35px] border-t border-gray-50 z-50">
-            <!-- Tombol Home (Abu-abu) -->
             <a href="status_pengiriman.php" class="text-gray-400 hover:text-brand transition-colors p-3">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />

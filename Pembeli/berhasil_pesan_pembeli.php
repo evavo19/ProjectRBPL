@@ -141,7 +141,7 @@ $video_products = [
                     <i data-lucide="camera" class="w-4 h-4 text-gray-400"></i>
                 </div>
                 <div class="flex gap-3 text-white">
-                    <a href="keranjang.php">
+                    <a href="keranjang_pembeli.php">
                         <i data-lucide="shopping-cart" class="w-6 h-6"></i>
                     </a>
                     <i data-lucide="message-circle" class="w-6 h-6"></i>

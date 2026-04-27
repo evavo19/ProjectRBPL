@@ -89,23 +89,11 @@
 <body>
 
     <div class="app-container">
-        
-        <!-- STATUS BAR (Identik dengan Tim Planner) -->
-        <div class="flex justify-between items-center px-8 pt-6 pb-2 bg-white sticky top-0 z-50">
-            <span class="text-xs font-semibold font-poppins" id="clock">09:27</span>
-            <div class="flex items-center gap-1.5">
-                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"></path>
-                </svg>
-                <div class="w-5 h-2.5 border border-black rounded-[2px] p-[1px] flex justify-start items-center">
-                    <div class="bg-black h-full w-[70%] rounded-[1px]"></div>
-                </div>
-            </div>
-        </div>
+    
 
         <!-- AREA LOGO TENGAH -->
         <div class="flex-1 flex flex-col justify-center items-center">
-            <a href="daftar_akun.php" class="logo-animate flex flex-col items-center clickable-logo decoration-none">
+            <a href="daftar_akun_pembeli.php" class="logo-animate flex flex-col items-center clickable-logo decoration-none">
                 <!-- LOGO GAMBAR (Menggantikan SVG) -->
                 <div class="w-30 h-30 mb-2 drop-shadow-sm flex items-center justify-center">
                     <img 

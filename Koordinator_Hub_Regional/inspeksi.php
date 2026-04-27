@@ -97,7 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 outline outline-1 outline-black/5">
                     <h3 class="text-black text-lg font-semibold font-montserrat mb-3">Catatan</h3>
-                    <textarea name="komentar" rows="4" placeholder="Tambahkan catatan..." class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm font-montserrat focus:ring-2 focus:ring-orange-500 outline-none shadow-sm"></textarea>
+                    <textarea name="catatan" rows="4" placeholder="Tambahkan catatan..." class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm font-montserrat focus:ring-2 focus:ring-orange-500 outline-none shadow-sm"></textarea>
                 </div>
             </div>
             

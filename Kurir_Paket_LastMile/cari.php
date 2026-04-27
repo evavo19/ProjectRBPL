@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Lokasi - Kurir</title>
+    <title>Update Lokasi (Cari) - Kurir Last Mile</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -37,7 +37,6 @@
             background-size: 40px 40px;
             position: relative;
             flex: 1;
-            /* Margin top ditambah agar tidak menabrak header */
             margin-top: 10px;
             border-radius: 30px 30px 0 0;
             box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -48,7 +47,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            height: 80px;
+            height: 65px;
             background: white;
             display: flex;
             justify-content: space-around;
@@ -92,21 +91,9 @@
 <body>
 
     <div class="mobile-container">
-        <!-- STATUS BAR -->
-        <div class="flex justify-between items-center px-8 pt-6 pb-2 bg-white sticky top-0 z-50">
-            <span class="text-xs font-bold font-poppins"><?php echo date('H:i'); ?></span>
-            <div class="flex items-center gap-1.5">
-                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"></path>
-                </svg>
-                <div class="w-5 h-2.5 border border-black rounded-[2px] p-[1px] flex justify-start items-center">
-                    <div class="bg-black h-full w-[70%] rounded-[1px]"></div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Header Section -->
-        <div class="bg-white px-6 py-4 flex items-center justify-between z-40">
+
+        <div class="bg-white px-6 pt-8 pb-4 flex items-center justify-between z-40">
             <div class="flex items-center gap-4">
                 <div class="w-10 h-10 flex items-center justify-center text-black text-2xl font-bold">
                     <i class="fas fa-search"></i>
@@ -121,29 +108,21 @@
             </div>
         </div>
 
-        <!-- Map Area -->
         <div class="map-container overflow-hidden">
-            <!-- Simulated Roads -->
             <div class="absolute top-20 left-[-50px] w-[500px] h-10 bg-white/60 rotate-[35deg]"></div>
             <div class="absolute top-60 left-[-50px] w-[500px] h-10 bg-white/60 rotate-[-15deg]"></div>
             <div class="absolute top-0 left-32 w-4 h-[600px] bg-white/60"></div>
 
-            <!-- Handle Indicator -->
             <div class="w-12 h-1.5 bg-gray-300 rounded-full mx-auto mt-4 relative z-10 opacity-50"></div>
 
-            <!-- UI Markers -->
-
-            <!-- Route Duration Tag (The Orange Bubble) -->
             <div class="absolute top-[25%] right-[15%] z-20">
                 <div class="bg-brand text-white px-4 py-2 rounded-2xl shadow-xl flex flex-col items-center">
                     <i class="fas fa-truck text-[10px] mb-0.5"></i>
                     <span class="text-[9px] font-bold">10 min walk</span>
-                    <!-- Arrow down -->
                     <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-brand rotate-45"></div>
                 </div>
             </div>
 
-            <!-- Marker 1 -->
             <div class="absolute top-[30%] left-[20%] flex flex-col items-center">
                 <div class="w-8 h-8 bg-white rounded-full shadow-md flex items-center justify-center mb-1">
                     <i class="fas fa-walking text-gray-400 text-[10px]"></i>
@@ -153,14 +132,12 @@
                 </div>
             </div>
 
-            <!-- Marker 2 (Pin Lokasi) -->
             <div class="absolute top-[50%] left-[50%]">
                 <div class="w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center">
                     <i class="fas fa-map-marker-alt text-gray-400"></i>
                 </div>
             </div>
 
-            <!-- Marker 3 -->
             <div class="absolute bottom-[30%] left-[25%] flex flex-col items-center">
                 <div class="w-8 h-8 bg-white rounded-full shadow-md flex items-center justify-center mb-1">
                     <i class="fas fa-box text-gray-400 text-[10px]"></i>
@@ -170,7 +147,6 @@
                 </div>
             </div>
 
-            <!-- Marker 4 -->
             <div class="absolute bottom-[40%] right-[20%] flex flex-col items-center">
                 <div class="w-8 h-8 bg-white rounded-full shadow-md flex items-center justify-center mb-1">
                     <i class="fas fa-clipboard-check text-gray-400 text-[10px]"></i>
@@ -181,7 +157,6 @@
             </div>
         </div>
 
-        <!-- BOTTOM NAVIGATION BAR -->
         <nav class="bottom-nav">
             <div class="absolute bottom-0 left-0 right-0 bg-white h-20 flex justify-around items-center px-2 rounded-t-3xl overflow-hidden shadow-[0_-15px_50px_rgba(0,0,0,0.2)] border-t border-gray-100">
                 <a href="pelacakan_pengiriman.php" class="nav-item hover:text-[#FF5C35] transition-all duration-200">

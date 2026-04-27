@@ -26,6 +26,6 @@ if ($id > 0 && in_array($status, $allowed)) {
 
 $conn->close();
 
-header("Location: detail_manager.php?id=$id");
+header("Location: detail_manager_kurirLM.php?id=$id");
 exit();
 ?>

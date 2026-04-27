@@ -17,7 +17,7 @@ if ($conn->connect_error) {
 $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 
 if ($id <= 0) {
-    header("Location: manager.php");
+    header("Location: manager_kurirLM.php");
     exit();
 }
 
@@ -29,7 +29,7 @@ $row = $result->fetch_assoc();
 $stmt->close();
 
 if (!$row) {
-    header("Location: manager.php");
+    header("Location: manager_kurirLM.php");
     exit();
 }
 
@@ -232,7 +232,7 @@ $status = $row['status'];
 
     <header class="page-header">
         <div class="flex items-center gap-3">
-            <a href="manager.php" class="w-9 h-9 bg-gray-50 rounded-xl flex items-center justify-center text-gray-500 hover:bg-gray-100 transition-colors">
+            <a href="manager_kurirLM.php" class="w-9 h-9 bg-gray-50 rounded-xl flex items-center justify-center text-gray-500 hover:bg-gray-100 transition-colors">
                 <i class="fas fa-arrow-left text-sm"></i>
             </a>
             <div>
@@ -371,7 +371,7 @@ $status = $row['status'];
     <div class="bottom-actions" id="bottomActions" style="width:390px;">
 
         <?php if ($status === 'DITINJAU'): ?>
-            <form method="POST" action="update_manager.php" style="flex:1">
+            <form method="POST" action="update_manager_kurirLM.php" style="flex:1">
                 <input type="hidden" name="id" value="<?= $row['id'] ?>">
                 <input type="hidden" name="status" value="DIPROSES">
                 <button type="submit" class="btn-action btn-proses w-full">
@@ -380,7 +380,7 @@ $status = $row['status'];
             </form>
 
         <?php elseif ($status === 'DIPROSES'): ?>
-            <form method="POST" action="update_manager.php" style="flex:1">
+            <form method="POST" action="update_manager_kurirLM.php" style="flex:1">
                 <input type="hidden" name="id" value="<?= $row['id'] ?>">
                 <input type="hidden" name="status" value="SELESAI">
                 <button type="submit" class="btn-action btn-selesai w-full">

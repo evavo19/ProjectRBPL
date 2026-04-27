@@ -91,7 +91,7 @@
                 <p class="text-gray-500 text-sm leading-relaxed px-2">
                     Lacak paket, rute, dan pengiriman anda secara efisien dengan mudah
                 </p>
-                <a href="pelacakan_pengiriman.php"
+                <a href="pelacakan_kirim_kurirLM.php"
                     class="block w-full mt-4 py-4 text-center bg-brand text-white font-bold font-montserrat rounded-full">
                     Mulai
                 </a>

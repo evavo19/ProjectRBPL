@@ -113,7 +113,7 @@ $stats = [
         <div class="app-inner">
 
             <div class="app-header">
-                <a href="index.php"
+                <a href="index_kurirLM.php"
                    style="width:32px;height:32px;flex-shrink:0;display:flex;align-items:center;justify-content:center;border-radius:8px;background:#f3f4f6;text-decoration:none;">
                     <svg width="20" height="20" fill="none" stroke="#374151" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/>
@@ -143,7 +143,7 @@ $stats = [
 
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:40px 32px 24px 32px;">
 
-                    <a href="pengiriman_paket.php" class="grid-card"
+                    <a href="pengiriman_paket_kurirLM.php" class="grid-card"
                        style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;border-radius:16px;text-decoration:none;">
                         <div style="width:48px;height:48px;background:#EF4C29;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;box-shadow:0 8px 16px rgba(239,76,41,0.2);">
                             <svg width="28" height="28" fill="none" stroke="white" viewBox="0 0 24 24">
@@ -201,14 +201,14 @@ $stats = [
                     <span style="font-size:10px;font-weight:700;color:#EF4C29;margin-top:2px;">Beranda</span>
                 </a>
 
-                <a href="cari.php" style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:64px;text-decoration:none;">
+                <a href="cari_kurirLM.php" style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:64px;text-decoration:none;">
                     <svg width="24" height="24" fill="none" stroke="#9ca3af" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                     </svg>
                     <span style="font-size:10px;font-weight:700;color:#9ca3af;margin-top:2px;">Cari</span>
                 </a>
 
-                <a href="tambah.php" style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:64px;text-decoration:none;">
+                <a href="tambah_kurirLM.php" style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:64px;text-decoration:none;">
                     <div style="width:40px;height:40px;background:#f3f4f6;border-radius:50%;display:flex;align-items:center;justify-content:center;">
                         <svg width="24" height="24" fill="none" stroke="#9ca3af" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
@@ -217,14 +217,14 @@ $stats = [
                     <span style="font-size:10px;font-weight:700;color:#9ca3af;margin-top:2px;">Tambah</span>
                 </a>
 
-                <a href="manager.php" style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:64px;text-decoration:none;">
+                <a href="manager_kurirLM.php" style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:64px;text-decoration:none;">
                     <svg width="24" height="24" fill="none" stroke="#9ca3af" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
                     </svg>
                     <span style="font-size:10px;font-weight:700;color:#9ca3af;margin-top:2px;">Pesan</span>
                 </a>
 
-                <a href="profil_kurir.php" style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:64px;text-decoration:none;">
+                <a href="profil_kurirLM.php" style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:64px;text-decoration:none;">
                     <svg width="24" height="24" fill="none" stroke="#9ca3af" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
                     </svg>

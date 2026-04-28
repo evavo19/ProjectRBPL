@@ -1,9 +1,5 @@
 <?php
 
-/**
- * Backend Logic (Simulasi Database)
- * Data ini biasanya diambil dari Database MySQL
- */
 $user_data = [
     'username' => 'Pembeli_Shopee',
     'shopeepay' => 100000,
@@ -65,11 +61,7 @@ $video_products = [
             position: relative;
             display: flex;
             flex-direction: column;
-
-            /* tambahan biar center */
             margin: 0 auto;
-
-            /* optional biar aman di layar kecil */
             max-width: 100%;
         }
 
@@ -77,7 +69,6 @@ $video_products = [
             background-color: #F54D2D;
         }
 
-        /* Gradient agar menyatu halus */
         .header-gradient {
             background: linear-gradient(180deg, #F54D2D 0%, #FF6433 100%);
         }
@@ -88,10 +79,8 @@ $video_products = [
 
     <div class="app-container shadow-2xl">
 
-        <!-- HEADER INTEGRATED (Status Bar + Search Area) -->
         <div class="header-gradient pb-10">
 
-            <!-- SEARCH AREA -->
             <div class="px-4 pt-10 flex items-center gap-3">
                 <div class="flex-1 bg-white rounded-sm flex items-center px-3 py-1.5 gap-2 shadow-sm">
                     <i data-lucide="search" class="w-4 h-4 text-gray-400"></i>
@@ -107,15 +96,12 @@ $video_products = [
             </div>
         </div>
 
-        <!-- WALLET BAR (Floating Over Header) -->
         <div class="mx-3 -mt-5 relative z-10 bg-white rounded-md shadow-md border border-gray-50 p-3 flex items-center">
-            <!-- Scan Icon -->
             <div class="pr-3 text-orange-600 border-r border-gray-100">
                 <i data-lucide="scan-line" class="w-8 h-8"></i>
             </div>
 
             <div class="flex flex-1 justify-around items-center px-2">
-                <!-- ShopeePay -->
                 <div class="flex flex-col items-start">
                     <div class="flex items-center gap-1">
                         <i data-lucide="wallet" class="w-3.5 h-3.5 text-orange-600"></i>
@@ -124,7 +110,6 @@ $video_products = [
                     <p class="text-[8px] text-gray-400">Gratis Isi Saldo</p>
                 </div>
 
-                <!-- Koin -->
                 <div class="flex flex-col items-start">
                     <div class="flex items-center gap-1">
                         <i data-lucide="coins" class="w-3.5 h-3.5 text-yellow-500"></i>
@@ -133,7 +118,6 @@ $video_products = [
                     <p class="text-[8px] text-gray-400">Klaim 25RB</p>
                 </div>
 
-                <!-- SPayLater -->
                 <div class="flex flex-col items-start">
                     <div class="flex items-center gap-1">
                         <i data-lucide="credit-card" class="w-3.5 h-3.5 text-orange-600"></i>
@@ -143,7 +127,6 @@ $video_products = [
                 </div>
             </div>
 
-            <!-- RP Icon -->
             <div class="pl-2 border-l border-gray-100">
                 <div class="w-7 h-7 rounded-full bg-orange-600 flex items-center justify-center text-white font-bold text-[10px] shadow-sm">
                     Rp
@@ -151,7 +134,6 @@ $video_products = [
             </div>
         </div>
 
-        <!-- MENU CATEGORIES -->
         <div class="p-4 bg-white">
             <div class="grid grid-cols-5 gap-y-4">
                 <?php foreach ($categories as $cat): ?>
@@ -167,14 +149,12 @@ $video_products = [
                     </div>
                 <?php endforeach; ?>
             </div>
-            <!-- Pagination Dots -->
             <div class="flex justify-center gap-1 mt-4">
                 <div class="w-4 h-1 bg-orange-500 rounded-full"></div>
                 <div class="w-1 h-1 bg-gray-200 rounded-full"></div>
             </div>
         </div>
 
-        <!-- BIRTHDAY SALE BANNER -->
         <div class="px-3 mt-2">
             <div class="rounded-xl overflow-hidden h-40 bg-orange-50 relative">
                 <img src="https://picsum.photos/seed/shopee1212/800/400" class="w-full h-full object-cover">
@@ -184,7 +164,6 @@ $video_products = [
             </div>
         </div>
 
-        <!-- LIVE & VIDEO SECTION -->
         <div class="p-3 grid grid-cols-2 gap-3 mt-2">
             <div class="bg-white p-3 rounded-xl border border-gray-50 shopee-shadow">
                 <div class="flex justify-between items-center mb-2">
@@ -216,27 +195,22 @@ $video_products = [
             </div>
         </div>
 
-        <!-- BOTTOM NAVIGATION -->
         <div class="absolute bottom-2 left-1/2 -translate-x-1/2 w-[100%] max-w-[400px] bg-white shadow-[0_-8px_30px_rgba(0,0,0,0.08)] border-t border-gray-100 flex justify-around items-center py-4 z-50 rounded-t-3xl">
-            <!-- BERANDA -->
             <a href="#" class="flex flex-col items-center gap-0.5 group transition-all duration-200">
                 <i data-lucide="home" class="w-6 h-6 text-orange-600 group-hover:scale-110"></i>
                 <span class="text-[9px] text-orange-600 font-bold">Beranda</span>
             </a>
 
-            <!-- TRENDING -->
             <a href="#" class="flex flex-col items-center gap-0.5 group transition-all duration-200">
                 <i data-lucide="flame" class="w-6 h-6 text-gray-400 group-hover:text-orange-600 group-hover:scale-110"></i>
                 <span class="text-[9px] text-gray-400 group-hover:text-orange-600">Trending</span>
             </a>
 
-            <!-- LIVE -->
             <a href="#" class="flex flex-col items-center gap-0.5 group transition-all duration-200">
                 <i data-lucide="play-circle" class="w-6 h-6 text-gray-400 group-hover:text-orange-600 group-hover:scale-110"></i>
                 <span class="text-[9px] text-gray-400 group-hover:text-orange-600">Live & Video</span>
             </a>
 
-            <!-- NOTIF -->
             <a href="#" class="flex flex-col items-center gap-0.5 group relative transition-all duration-200">
                 <div class="relative">
                     <i data-lucide="bell" class="w-6 h-6 text-gray-400 group-hover:text-orange-600 group-hover:scale-110"></i>
@@ -245,7 +219,6 @@ $video_products = [
                 <span class="text-[9px] text-gray-400 group-hover:text-orange-600">Notifikasi</span>
             </a>
 
-            <!-- SAYA -->
             <a href="profil_pembeli.php" class="flex flex-col items-center gap-0.5 group transition-all duration-200">
                 <i data-lucide="user" class="w-6 h-6 text-gray-400 group-hover:text-orange-600 group-hover:scale-110"></i>
                 <span class="text-[9px] text-gray-400 group-hover:text-orange-600">Saya</span>

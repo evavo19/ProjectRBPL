@@ -1,9 +1,4 @@
 <?php
-/**
- * checkout.php
- * Data statis PHP hanya sebagai fallback.
- * Semua kalkulasi interaktif dijalankan via JavaScript + localStorage.
- */
 
 $user_address = [
     'name'    => 'Eva Dewi Agustin',
@@ -21,7 +16,7 @@ $service_fee       = 1000;
 $protection_fee    = 500;
 $shipping_discount = -8000;
 $voucher_discount  = -5000;
-$coin_value        = 470; // nilai 47 koin dalam rupiah
+$coin_value        = 470;
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -47,7 +42,6 @@ $coin_value        = 470; // nilai 47 koin dalam rupiah
         .header-gradient { background: linear-gradient(180deg, #F54D2D 0%, #FF6433 100%); }
         .shopee-border { border-left: 3px solid #F54D2D; }
 
-        /* Modal Payment */
         #payment-modal {
             display: none; position: fixed; inset: 0;
             background: rgba(0,0,0,0.5); z-index: 200;
@@ -68,7 +62,6 @@ $coin_value        = 470; // nilai 47 koin dalam rupiah
         .payment-option.selected { border-color: #F54D2D; background: #fff5f3; }
         .payment-option input[type=radio] { accent-color: #F54D2D; }
 
-        /* Toggle Switch */
         .toggle-track {
             width: 32px; height: 16px; border-radius: 999px;
             background: #d1d5db; position: relative; cursor: pointer;
@@ -85,7 +78,6 @@ $coin_value        = 470; // nilai 47 koin dalam rupiah
 </head>
 <body class="flex justify-center">
 
-<!-- ===================== MODAL METODE PEMBAYARAN ===================== -->
 <div id="payment-modal">
     <div id="payment-modal-box">
         <div class="flex justify-between items-center mb-4">
@@ -156,11 +148,9 @@ $coin_value        = 470; // nilai 47 koin dalam rupiah
         </button>
     </div>
 </div>
-<!-- ================================================================== -->
 
 <div class="app-container shadow-2xl">
 
-    <!-- HEADER -->
     <div class="header-gradient sticky top-0 z-50">
         <div class="flex justify-between items-center px-8 pt-6 pb-2 text-white">
             <span class="text-xs font-semibold font-poppins" id="clock">09:27</span>
@@ -181,7 +171,6 @@ $coin_value        = 470; // nilai 47 koin dalam rupiah
         </div>
     </div>
 
-    <!-- ALAMAT PENGIRIMAN -->
     <div class="bg-white p-4 relative mb-2">
         <div class="flex items-start gap-3">
             <i data-lucide="map-pin" class="w-5 h-5 text-[#F54D2D] mt-0.5"></i>
@@ -199,12 +188,9 @@ $coin_value        = 470; // nilai 47 koin dalam rupiah
              style="background-image: linear-gradient(90deg, #f54d2d 25%, #ffffff 25%, #ffffff 50%, #4a90e2 50%, #4a90e2 75%, #ffffff 75%, #ffffff 100%); background-size: 40px 100%;"></div>
     </div>
 
-    <!-- PRODUK (diisi JavaScript dari localStorage) -->
     <div id="product-section" class="bg-white mb-2">
-        <!-- Diisi otomatis oleh JS -->
     </div>
 
-    <!-- OPSI PENGIRIMAN -->
     <div class="bg-blue-50/30 p-4 mb-2 border-y border-gray-100">
         <div class="flex justify-between items-center mb-3">
             <span class="text-xs font-medium text-gray-800">Opsi Pengiriman</span>
@@ -226,7 +212,6 @@ $coin_value        = 470; // nilai 47 koin dalam rupiah
         </div>
     </div>
 
-    <!-- VOUCHER & KOIN -->
     <div class="bg-white mb-2 divide-y divide-gray-50">
         <div class="p-4 flex justify-between items-center">
             <div class="flex items-center gap-2">
@@ -238,21 +223,18 @@ $coin_value        = 470; // nilai 47 koin dalam rupiah
                 <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i>
             </div>
         </div>
-        <!-- STEP 4: Toggle Koin Shopee -->
         <div class="p-4 flex justify-between items-center" id="coin-row">
             <div class="flex items-center gap-2">
                 <div class="w-4 h-4 rounded-full bg-yellow-400 flex items-center justify-center text-[9px] font-bold text-white shadow-sm">S</div>
                 <span class="text-[11px] text-gray-600">Tukarkan 47 Koin Shopee</span>
                 <span class="text-[10px] text-yellow-600 font-medium">(–Rp<?= number_format($coin_value, 0, ',', '.') ?>)</span>
             </div>
-            <!-- Toggle switch custom -->
             <div class="toggle-track" id="coin-toggle" onclick="toggleCoin()">
                 <div class="toggle-thumb"></div>
             </div>
         </div>
     </div>
 
-    <!-- METODE PEMBAYARAN -->
     <div class="bg-white mb-2 divide-y divide-gray-50">
         <div class="p-4 flex justify-between items-center cursor-pointer" onclick="openPaymentModal()">
             <div class="flex items-center gap-2">
@@ -270,7 +252,6 @@ $coin_value        = 470; // nilai 47 koin dalam rupiah
         </div>
     </div>
 
-    <!-- RINCIAN PEMBAYARAN -->
     <div class="bg-white p-4 mb-2">
         <h2 class="text-xs font-bold text-gray-800 mb-3">Rincian Pembayaran</h2>
         <div class="space-y-2">
@@ -282,7 +263,6 @@ $coin_value        = 470; // nilai 47 koin dalam rupiah
                 <span>Subtotal Pengiriman</span>
                 <span id="bill-subtotal-shipping">Rp<?= number_format($shipping['cost'], 0, ',', '.') ?></span>
             </div>
-            <!-- STEP 3: Proteksi kerusakan baris -->
             <div class="flex justify-between text-[11px] text-gray-500" id="bill-protection-row" style="display:none!important;">
                 <span>Proteksi Kerusakan</span>
                 <span id="bill-protection">Rp0</span>
@@ -299,7 +279,6 @@ $coin_value        = 470; // nilai 47 koin dalam rupiah
                 <span>Voucher Diskon</span>
                 <span class="text-[#F54D2D]">–Rp<?= number_format(abs($voucher_discount), 0, ',', '.') ?></span>
             </div>
-            <!-- Baris koin hanya muncul jika toggle aktif -->
             <div class="flex justify-between text-[11px] text-gray-500" id="bill-coin-row" style="display:none;">
                 <span>Potongan Koin Shopee</span>
                 <span class="text-[#F54D2D]">–Rp<?= number_format($coin_value, 0, ',', '.') ?></span>
@@ -315,7 +294,6 @@ $coin_value        = 470; // nilai 47 koin dalam rupiah
         </div>
     </div>
 
-    <!-- STICKY BOTTOM -->
     <div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[390px] bg-white border-t border-gray-100 flex items-center justify-end z-[100] shadow-lg rounded-b-[25px] overflow-hidden">
         <div class="text-right px-2">
             <div class="text-[10px] text-gray-800">Total Pembayaran</div>
@@ -329,9 +307,7 @@ $coin_value        = 470; // nilai 47 koin dalam rupiah
 </div>
 
 <script>
-// ============================================================
-// KONSTANTA DARI PHP
-// ============================================================
+
 const SHIPPING_COST      = <?= $shipping['cost'] ?>;
 const SERVICE_FEE        = <?= $service_fee ?>;
 const PROTECTION_FEE     = <?= $protection_fee ?>;
@@ -339,23 +315,18 @@ const SHIPPING_DISCOUNT  = <?= abs($shipping_discount) ?>;
 const VOUCHER_DISCOUNT   = <?= abs($voucher_discount) ?>;
 const COIN_VALUE         = <?= $coin_value ?>;
 
-// ============================================================
-// STATE APLIKASI
-// ============================================================
+
 let checkoutItems    = [];
-let protectionActive = {};   // { itemId: true/false }
+let protectionActive = {};  
 let coinActive       = false;
 
-// ============================================================
-// STEP 2: RENDER PRODUK dari localStorage
-// ============================================================
+
 function renderProducts() {
     const raw = localStorage.getItem('checkoutItems');
     if (raw) {
         try { checkoutItems = JSON.parse(raw); } catch(e) { checkoutItems = []; }
     }
 
-    // Fallback jika tidak ada data (akses langsung ke checkout.php)
     if (!checkoutItems.length) {
         checkoutItems = [{
             id: '1', shop_name: 'Jims Honey Yogyakarta',
@@ -365,13 +336,11 @@ function renderProducts() {
         }];
     }
 
-    // Inisialisasi state proteksi: semua aktif by default
     checkoutItems.forEach(item => { protectionActive[item.id] = true; });
 
     const section = document.getElementById('product-section');
     let html = '';
 
-    // Kelompokkan produk per toko
     const shops = {};
     checkoutItems.forEach(item => {
         if (!shops[item.shop_name]) shops[item.shop_name] = [];
@@ -425,17 +394,13 @@ function renderProducts() {
     section.innerHTML = html;
 }
 
-// ============================================================
-// STEP 3: Toggle Proteksi Kerusakan
-// ============================================================
+
 function toggleProtection(itemId, isChecked) {
     protectionActive[itemId] = isChecked;
     recalculate();
 }
 
-// ============================================================
-// STEP 4: Toggle Koin Shopee
-// ============================================================
+
 function toggleCoin() {
     coinActive = !coinActive;
     const track = document.getElementById('coin-toggle');
@@ -444,23 +409,18 @@ function toggleCoin() {
     recalculate();
 }
 
-// ============================================================
-// KALKULASI UTAMA: update semua angka
-// ============================================================
+
 function recalculate() {
-    // 1. Subtotal produk
     let subtotalProduct = 0;
     checkoutItems.forEach(item => {
         subtotalProduct += item.price * item.quantity;
     });
 
-    // 2. Proteksi kerusakan (jumlahkan yang aktif)
     let totalProtection = 0;
     checkoutItems.forEach(item => {
         if (protectionActive[item.id]) totalProtection += PROTECTION_FEE;
     });
 
-    // 3. Tampilkan/sembunyikan baris proteksi
     const protRow = document.getElementById('bill-protection-row');
     if (totalProtection > 0) {
         protRow.style.setProperty('display', 'flex', 'important');
@@ -469,7 +429,6 @@ function recalculate() {
         protRow.style.setProperty('display', 'none', 'important');
     }
 
-    // 4. Total sebelum diskon
     let total = subtotalProduct
               + SHIPPING_COST
               + SERVICE_FEE
@@ -477,17 +436,13 @@ function recalculate() {
               - SHIPPING_DISCOUNT
               - VOUCHER_DISCOUNT;
 
-    // 5. Kurangi koin jika aktif
     if (coinActive) total -= COIN_VALUE;
 
-    // 6. Total hemat
     let savings = SHIPPING_DISCOUNT + VOUCHER_DISCOUNT + (coinActive ? COIN_VALUE : 0);
-    // Tambahkan selisih harga original vs harga jual
     checkoutItems.forEach(item => {
         savings += (item.original_price - item.price) * item.quantity;
     });
 
-    // 7. Update DOM
     document.getElementById('bill-subtotal-product').textContent = 'Rp' + subtotalProduct.toLocaleString('id-ID');
     document.getElementById('bill-total').textContent            = 'Rp' + total.toLocaleString('id-ID');
     document.getElementById('footer-total').textContent          = 'Rp' + total.toLocaleString('id-ID');
@@ -495,9 +450,7 @@ function recalculate() {
     document.getElementById('bill-savings').textContent          = 'Rp' + savings.toLocaleString('id-ID');
 }
 
-// ============================================================
-// STEP 5: Modal Metode Pembayaran
-// ============================================================
+
 function openPaymentModal() {
     document.getElementById('payment-modal').classList.add('show');
     lucide.createIcons();
@@ -506,7 +459,6 @@ function closePaymentModal() {
     document.getElementById('payment-modal').classList.remove('show');
 }
 
-// Highlight pilihan aktif saat radio diklik
 document.addEventListener('change', function(e) {
     if (e.target.name === 'payment') {
         document.querySelectorAll('.payment-option').forEach(opt => opt.classList.remove('selected'));
@@ -523,14 +475,11 @@ function confirmPaymentMethod() {
     closePaymentModal();
 }
 
-// Tutup modal jika klik di luar
 document.getElementById('payment-modal').addEventListener('click', function(e) {
     if (e.target === this) closePaymentModal();
 });
 
-// ============================================================
-// JAM & INIT
-// ============================================================
+
 function updateClock() {
     const now = new Date();
     const t = String(now.getHours()).padStart(2,'0') + ':' + String(now.getMinutes()).padStart(2,'0');
@@ -544,8 +493,8 @@ function initLucide() {
 }
 
 window.onload = function() {
-    renderProducts();   // Step 2
-    recalculate();      // Hitung total awal
+    renderProducts(); 
+    recalculate();     
     initLucide();
     updateClock();
     setInterval(updateClock, 1000);

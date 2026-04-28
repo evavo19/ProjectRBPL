@@ -1,8 +1,5 @@
 <?php
 
-/**
- * Backend Logic (Simulasi Database)
- */
 $user_data = [
     'username' => 'Pembeli_Shopee',
     'shopeepay' => 100000,
@@ -76,7 +73,6 @@ $video_products = [
             background: linear-gradient(180deg, #F54D2D 0%, #FF6433 100%);
         }
 
-        /* --- PERBAIKAN ANIMASI MODAL --- */
         #modalOverlay {
             transition: opacity 0.3s ease;
         }
@@ -103,7 +99,6 @@ $video_products = [
 
     <div class="app-container shadow-2xl">
 
-        <!-- MODAL PESANAN BERHASIL -->
         <div id="modalOverlay" class="fixed inset-0 bg-black/40 z-[100] flex items-center justify-center hidden">
             <div class="bg-white w-[280px] rounded-[24px] p-8 flex flex-col items-center modal-scale relative">
                 <div class="w-24 h-24 bg-[#F54D2D] rounded-[20px] flex items-center justify-center mb-6">
@@ -120,7 +115,6 @@ $video_products = [
             </div>
         </div>
 
-        <!-- HEADER INTEGRATED -->
         <div class="header-gradient pb-10">
             <div class="flex justify-between items-center px-8 pt-6 pb-4 text-white">
                 <span class="text-xs font-semibold font-poppins" id="clock">00:00</span>
@@ -149,7 +143,6 @@ $video_products = [
             </div>
         </div>
 
-        <!-- WALLET BAR -->
         <div class="mx-3 -mt-5 relative z-10 bg-white rounded-md shadow-md border border-gray-50 p-3 flex items-center">
             <div class="pr-3 text-orange-600 border-r border-gray-100">
                 <i data-lucide="scan-line" class="w-8 h-8"></i>
@@ -188,7 +181,6 @@ $video_products = [
             </div>
         </div>
 
-        <!-- MENU CATEGORIES -->
         <div class="p-4 bg-white">
             <div class="grid grid-cols-5 gap-y-4">
                 <?php foreach ($categories as $cat): ?>
@@ -210,7 +202,6 @@ $video_products = [
             </div>
         </div>
 
-        <!-- BANNER & SECTIONS (Sesuai kode awal Anda) -->
         <div class="px-3 mt-2">
             <div class="rounded-xl overflow-hidden h-40 bg-orange-50 relative">
                 <img src="https://picsum.photos/seed/shopee1212/800/400" class="w-full h-full object-cover">
@@ -220,7 +211,6 @@ $video_products = [
             </div>
         </div>
 
-        <!-- LIVE & VIDEO SECTION -->
         <div class="p-3 grid grid-cols-2 gap-3 mt-2">
             <div class="bg-white p-3 rounded-xl border border-gray-50 shopee-shadow">
                 <div class="flex justify-between items-center mb-2">
@@ -252,27 +242,22 @@ $video_products = [
             </div>
         </div>
 
-        <!-- BOTTOM NAVIGATION -->
         <div class="absolute bottom-2 left-1/2 -translate-x-1/2 w-[100%] max-w-[400px] bg-white shadow-[0_-8px_30px_rgba(0,0,0,0.08)] border-t border-gray-100 flex justify-around items-center py-4 z-50 rounded-t-3xl">
-            <!-- BERANDA -->
             <a href="#" class="flex flex-col items-center gap-0.5 group transition-all duration-200">
                 <i data-lucide="home" class="w-6 h-6 text-orange-600 group-hover:scale-110"></i>
                 <span class="text-[9px] text-orange-600 font-bold">Beranda</span>
             </a>
 
-            <!-- TRENDING -->
             <a href="#" class="flex flex-col items-center gap-0.5 group transition-all duration-200">
                 <i data-lucide="flame" class="w-6 h-6 text-gray-400 group-hover:text-orange-600 group-hover:scale-110"></i>
                 <span class="text-[9px] text-gray-400 group-hover:text-orange-600">Trending</span>
             </a>
 
-            <!-- LIVE -->
             <a href="#" class="flex flex-col items-center gap-0.5 group transition-all duration-200">
                 <i data-lucide="play-circle" class="w-6 h-6 text-gray-400 group-hover:text-orange-600 group-hover:scale-110"></i>
                 <span class="text-[9px] text-gray-400 group-hover:text-orange-600">Live & Video</span>
             </a>
 
-            <!-- NOTIF -->
             <a href="#" class="flex flex-col items-center gap-0.5 group relative transition-all duration-200">
                 <div class="relative">
                     <i data-lucide="bell" class="w-6 h-6 text-gray-400 group-hover:text-orange-600 group-hover:scale-110"></i>
@@ -281,7 +266,6 @@ $video_products = [
                 <span class="text-[9px] text-gray-400 group-hover:text-orange-600">Notifikasi</span>
             </a>
 
-            <!-- SAYA -->
             <a href="profil_pembeli.php" class="flex flex-col items-center gap-0.5 group transition-all duration-200">
                 <i data-lucide="user" class="w-6 h-6 text-gray-400 group-hover:text-orange-600 group-hover:scale-110"></i>
                 <span class="text-[9px] text-gray-400 group-hover:text-orange-600">Saya</span>
@@ -291,7 +275,6 @@ $video_products = [
     </div>
 
     <script>
-        // --- PERBAIKAN LOGIKA POP UP ---
         function openModal() {
             const modal = document.getElementById('modalOverlay');
             modal.classList.remove('hidden');
@@ -313,7 +296,6 @@ $video_products = [
         window.onload = function() {
             initLucide();
 
-            // Jalankan jam
             function updateClock() {
                 const now = new Date();
                 const timeStr = String(now.getHours()).padStart(2, '0') + ':' +
@@ -324,7 +306,6 @@ $video_products = [
             setInterval(updateClock, 1000);
             updateClock();
 
-            // MUNCULKAN POP UP SECARA OTOMATIS SAAT HALAMAN DIBUKA
             setTimeout(openModal, 800);
         };
     </script>

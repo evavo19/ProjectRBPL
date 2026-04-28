@@ -75,7 +75,6 @@
             animation: loading-slide 1.5s ease-in-out infinite;
         }
 
-        /* Cursor pointer untuk logo interaktif */
         .clickable-logo {
             cursor: pointer;
             transition: transform 0.2s active;
@@ -90,11 +89,8 @@
 
     <div class="app-container">
     
-
-        <!-- AREA LOGO TENGAH -->
         <div class="flex-1 flex flex-col justify-center items-center">
             <a href="daftar_akun_pembeli.php" class="logo-animate flex flex-col items-center clickable-logo decoration-none">
-                <!-- LOGO GAMBAR (Menggantikan SVG) -->
                 <div class="w-30 h-30 mb-2 drop-shadow-sm flex items-center justify-center">
                     <img 
                         src="assets/shopee-logo.png" 
@@ -106,7 +102,6 @@
             </a>
         </div>
 
-        <!-- BAGIAN LOADING -->
         <div class="pb-28 flex flex-col items-center">
             <div class="w-40 h-1 bg-gray-100 rounded-full overflow-hidden">
                 <div class="h-full bg-shopee w-1/3 loading-line"></div>
@@ -114,14 +109,12 @@
             <p class="mt-4 text-gray-400 text-[10px] font-bold tracking-[0.2em] uppercase">Memuat...</p>
         </div>
 
-        <!-- FOOTER BRANDING -->
         <div class="absolute bottom-12 w-full text-center">
             <span class="text-gray-300 text-[8px] font-bold tracking-[0.5em] uppercase">Eva Dewi Agustin Group</span>
         </div>
     </div>
 
     <script>
-        // Update jam secara real-time
         function updateClock() {
             const now = new Date();
             const timeStr = String(now.getHours()).padStart(2, '0') + ':' + 
@@ -132,10 +125,8 @@
         setInterval(updateClock, 1000);
         updateClock();
 
-        // Simulasi perpindahan halaman otomatis (tetap aktif jika user tidak klik)
         setTimeout(() => {
             console.log("Mengarahkan ke dashboard utama pembeli...");
-            // window.location.href = "home_buyer.php";
         }, 5000);
     </script>
 </body>

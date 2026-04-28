@@ -75,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['proses_daftar'])) {
             display: flex;
             flex-direction: column;
             max-width: 100vw;
-            overflow: hidden; /* penting! */
+            overflow: hidden;
         }
 
         .scroll-content::-webkit-scrollbar {
@@ -107,7 +107,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['proses_daftar'])) {
 
     <div class="app-container">
 
-        <!-- HEADER (STICKY / DIAM) -->
         <div class="flex-none flex items-center px-4 py-3 border-b border-gray-100 mt-6 bg-white z-10">
             <button onclick="history.back()" class="p-2">
                 <svg class="w-6 h-6 text-shopee" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -122,17 +121,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['proses_daftar'])) {
             </button>
         </div>
 
-        <!-- KONTEN YANG BISA DI-SCROLL -->
         <div class="flex-1 overflow-y-auto scroll-content">
 
-            <!-- LOGO SECTION -->
             <div class="flex justify-center py-8">
                 <div class="w-30 h-30 rounded-2xl flex items-center justify-center">
                     <img src="assets/shopee-logo.png" alt="Icon" class="w-16 h-16 object-contain">
                 </div>
             </div>
 
-            <!-- FORM SECTION -->
             <form action="" method="POST" class="px-8 space-y-6">
                 <div class="relative flex items-center border-b border-gray-200 py-2">
                     <div class="w-6 h-6 bg-neutral-400 rounded-sm flex items-center justify-center mr-3">
@@ -185,14 +181,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['proses_daftar'])) {
                 </div>
             </form>
 
-            <!-- DIVIDER -->
             <div class="flex items-center px-8 my-8">
                 <div class="flex-1 h-[1px] bg-gray-200"></div>
                 <span class="px-3 text-zinc-400 text-[10px] font-bold font-montserrat tracking-widest uppercase">Atau</span>
                 <div class="flex-1 h-[1px] bg-gray-200"></div>
             </div>
 
-            <!-- SOCIAL DAFTAR SECTION -->
             <div class="px-8 space-y-3 pb-12">
                 <button class="w-full h-11 flex items-center bg-blue-500 text-white rounded-sm overflow-hidden">
                     <div class="w-10 h-10 bg-white m-0.5 rounded-sm flex items-center justify-center shrink-0">
@@ -242,12 +236,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['proses_daftar'])) {
             </div>
 
         </div>
-        <!-- akhir scroll-content -->
 
     </div>
-    <!-- akhir app-container -->
 
-    <!-- SUCCESS MODAL -->
     <div id="successModal" class="fixed inset-0 bg-black/60 z-[100] <?php echo $show_modal ? 'flex' : 'hidden'; ?> items-center justify-center p-6 backdrop-blur-sm">
         <div class="bg-white rounded-[30px] p-8 w-full max-w-[320px] text-center shadow-2xl modal-animate">
             <div class="w-20 h-20 bg-green-50 text-green-500 rounded-full flex items-center justify-center text-3xl mx-auto mb-6">

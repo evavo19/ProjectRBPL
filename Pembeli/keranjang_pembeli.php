@@ -72,7 +72,6 @@ $savings = 17093;
 
 <div class="app-container shadow-2xl bg-gray-50">
 
-    <!-- HEADER -->
     <div class="header-gradient sticky top-0 z-50 shadow-md">
         <div class="flex justify-between items-center px-8 pt-6 pb-2 text-white"></div>
         <div class="flex items-center justify-between px-4 pb-4 pt-1 text-white">
@@ -89,7 +88,6 @@ $savings = 17093;
         </div>
     </div>
 
-    <!-- LIST KERANJANG -->
     <div class="mt-3 space-y-3 px-2">
         <?php foreach ($cart_items as $item): ?>
         <div class="bg-white rounded-md p-3 shadow-sm" data-item-id="<?= $item['id'] ?>">
@@ -139,7 +137,6 @@ $savings = 17093;
         <?php endforeach; ?>
     </div>
 
-    <!-- FOOTER -->
     <div class="absolute bottom-0 left-0 w-full bg-white border-t border-gray-100 z-[60] shadow-[0_-10px_20px_rgba(0,0,0,0.03)]">
         <div class="px-4 py-2 border-b border-gray-50 flex flex-col gap-2">
             <div class="flex justify-between items-center">
@@ -249,9 +246,7 @@ document.querySelectorAll('.qty-btn').forEach(function(btn) {
     });
 });
 
-// ============================================================
-// STEP 1: Kumpulkan data item yang dipilih → simpan ke localStorage
-// ============================================================
+
 function goToCheckout() {
     const selectedItems = [];
     document.querySelectorAll('.product-checkbox:checked').forEach(function(cb) {
@@ -274,7 +269,6 @@ function goToCheckout() {
         return;
     }
 
-    // Simpan ke localStorage agar bisa dibaca checkout.php
     localStorage.setItem('checkoutItems', JSON.stringify(selectedItems));
     window.location.href = 'checkout_pembeli.php';
 }

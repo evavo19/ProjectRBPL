@@ -4,7 +4,7 @@ $user = "if0_41736846";
 $password = "tugasRBPL2026";
 $database = "if0_41736846_db_rbpl";
 
-$conn = new mysqli($host, $user, $pass, $database);
+$conn = new mysqli($host, $user, $password, $database);
 
 if ($conn->connect_error) {
     die("Koneksi gagal: " . $conn->connect_error);

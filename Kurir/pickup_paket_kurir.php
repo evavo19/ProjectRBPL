@@ -231,16 +231,16 @@
                 <h2 class="text-2xl font-bold font-poppins text-gray-900 leading-tight">Selesai Hari Ini</h2>
 
                 <div class="mt-6 bg-gray-900 p-6 rounded-[2.5rem] flex justify-between items-center text-white relative overflow-hidden">
-                    <a href="/project_rbpl/Pembeli/first_page_pembeli.php" class="absolute right-[-10px] top-[-10px] opacity-10">
+                    <a href="/Operator_Sortation_Center/status_sortir.php" class="absolute right-[-10px] top-[-10px] opacity-10">
                         <i data-lucide="package" class="w-24 h-24"></i>
                     </a>
                     <div class="relative z-10">
                         <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Total Pickup</p>
                         <p id="history-count" class="text-3xl font-bold font-poppins mt-1">0 <span class="text-sm font-normal text-gray-400">Paket</span></p>
                     </div>
-                    <a href="/Operator_Sortation_Center/status_sortir.php" class="w-12 h-12 bg-brand rounded-2xl flex items-center justify-center shadow-lg shadow-brand/30">
+                    <div class="w-12 h-12 bg-brand rounded-2xl flex items-center justify-center shadow-lg shadow-brand/30">
                         <i data-lucide="check" class="w-6 h-6 text-white"></i>
-                    </a>
+                    </div>
                 </div>
 
                 <div id="history-list" class="mt-8 space-y-3">

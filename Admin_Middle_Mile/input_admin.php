@@ -4,7 +4,7 @@ $user = "if0_41736846";
 $password = "tugasRBPL2026";
 $database = "if0_41736846_db_rbpl";
 
-$conn = new mysqli($host, $user, $pass, $db_name);
+$conn = new mysqli($host, $user, $password, $database);
 
 $success = false;
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

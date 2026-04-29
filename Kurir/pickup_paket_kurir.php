@@ -231,7 +231,7 @@
                 <h2 class="text-2xl font-bold font-poppins text-gray-900 leading-tight">Selesai Hari Ini</h2>
 
                 <div class="mt-6 bg-gray-900 p-6 rounded-[2.5rem] flex justify-between items-center text-white relative overflow-hidden">
-                    <a href="/Operator_Sortation_Center/status_sortir.php" class="absolute right-[-10px] top-[-10px] opacity-10">
+                    <a href="/project_rbpl/Operator_Sortation_Center/status_sortir.php" class="absolute right-[-10px] top-[-10px] opacity-10">
                         <i data-lucide="package" class="w-24 h-24"></i>
                     </a>
                     <div class="relative z-10">

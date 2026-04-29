@@ -5,12 +5,13 @@ $destination = isset($_GET['dest']) ? $_GET['dest'] : 'Bantul, Yogyakarta';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $newDest = $_POST['new_destination'];
     $notes = $_POST['notes'];
-    
+
     $success = true;
 }
 ?>
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,16 +20,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { font-family: 'Poppins', sans-serif; }
-        .font-roboto { font-family: 'Roboto', sans-serif; }
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .font-roboto {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 </head>
+
 <body class="bg-gray-200 flex justify-center">
 
     <div class="w-full max-w-[384px] h-screen bg-white shadow-2xl relative flex flex-col md:rounded-[25px] overflow-hidden">
-        
+
         <div class="flex-none bg-orange-600 z-50">
             <div class="px-6 py-4 flex items-center gap-4">
                 <a href="javascript:history.back()" class="p-2 -ml-2 hover:bg-orange-700 rounded-full transition-colors">
@@ -40,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <div class="flex-1 overflow-y-auto hide-scrollbar bg-gray-50">
             <form id="confirmForm" method="POST" class="px-6 py-6 space-y-6">
-                
+
                 <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
                     <h2 class="text-slate-800 text-lg font-bold font-roboto mb-4 flex items-center gap-2">
                         <i class="fas fa-box-open text-orange-600 text-sm"></i>
@@ -73,12 +87,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </h2>
                     <div class="space-y-4">
                         <div class="relative">
-                            <input type="text" name="new_destination" placeholder="Enter new destination" 
+                            <input type="text" name="new_destination" placeholder="Enter new destination"
                                 class="w-full pl-4 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-orange-500 focus:bg-white outline-none transition-all">
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-gray-400 uppercase mb-2 ml-1">Catatan Tambahan</label>
-                            <textarea name="notes" rows="3" placeholder="Tambahkan deskripsi paket..." 
+                            <textarea name="notes" rows="3" placeholder="Tambahkan deskripsi paket..."
                                 class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-orange-500 focus:bg-white outline-none transition-all"></textarea>
                         </div>
                     </div>
@@ -114,8 +128,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <i class="fas fa-check-circle"></i>
             </div>
             <h3 class="text-2xl font-bold text-slate-800 mb-2">Berhasil!</h3>
-            <p class="text-gray-500 text-sm mb-8">Data paket diperbarui dan diteruskan ke Hub Regional.</p>
-            <button onclick="location.href='status_sortir.php'" class="w-full py-4 bg-slate-900 text-white rounded-2xl font-bold hover:bg-black transition-colors">Selesai</button>
+            <p class="text-gray-500 text-sm mb-8">Data paket diperbarui dan diteruskan ke Admin Middle Mile.</p>
+            <button onclick="location.href='/Admin_Middle_Mile/catat_admin.php'" class="w-full py-4 bg-slate-900 text-white rounded-2xl font-bold hover:bg-black transition-colors">Selesai</button>
         </div>
     </div>
 
@@ -142,4 +156,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     </script>
 </body>
+
 </html>

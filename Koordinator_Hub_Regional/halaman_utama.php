@@ -47,7 +47,7 @@ $stats = [
         <div class="flex-none bg-orange-600 z-50">
 
             <div class="px-6 py-6 pb-10">
-                <h1 class="text-white text-2xl font-bold font-montserrat tracking-tight">Halaman Utama</h1>
+                <a href="/Tim_Planner_Middle_Mile/index.php" class="text-white text-2xl font-bold font-montserrat tracking-tight">Halaman Utama</a>
                 <p class="text-orange-100 text-xs mt-1 opacity-90">Koordinator Hub Regional</p>
             </div>
         </div>

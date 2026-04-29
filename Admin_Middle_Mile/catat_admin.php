@@ -68,7 +68,7 @@ $stats = [
             <div class="px-6 pt-5 pb-2">
             </div>
 
-            <a href="/project_rbpl/Koordinator_Hub_Regional/halaman_utama.php" class="px-6 py-6 bg-white mx-6 mb-6 rounded-2xl shadow-lg flex items-center gap-4 border border-gray-100">
+            <a href="/Koordinator_Hub_Regional/halaman_utama.php" class="px-6 py-6 bg-white mx-6 mb-6 rounded-2xl shadow-lg flex items-center gap-4 border border-gray-100">
                 <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-orange-100 flex-none">
                     <img src="admin.png" alt="Profile" class="w-full h-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name=Admin&background=EA580C&color=fff'">
                 </div>

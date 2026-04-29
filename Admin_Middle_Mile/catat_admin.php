@@ -1,10 +1,10 @@
 <?php
 $host = "sql203.infinityfree.com";
 $user = "if0_41736846";
-$pass = "tugasRBPL2026";
-$db_name = "if0_41736846_db_rbpl";
+$password = "tugasRBPL2026";
+$database = "if0_41736846_db_rbpl";
 
-$conn = new mysqli($host, $user, $pass, $db_name);
+$conn = new mysqli($host, $user, $pass, $database);
 
 if ($conn->connect_error) {
     die("Koneksi gagal: " . $conn->connect_error);
@@ -19,14 +19,14 @@ if ($result && $result->num_rows > 0) {
             'rute' => $row['tujuan'],
             'driver' => $row['driver'],
             'time' => $row['data_paket'],
-            'type' => 'Middle Mile' 
+            'type' => 'Middle Mile'
         ];
     }
 }
 
 $stats = [
     'shipped' => count($shipments),
-    'total_weight' => 'N/A', 
+    'total_weight' => 'N/A',
     'avg_delivery' => 'Diproses'
 ];
 ?>
@@ -68,7 +68,7 @@ $stats = [
             <div class="px-6 pt-5 pb-2">
             </div>
 
-            <div class="px-6 py-6 bg-white mx-6 mb-6 rounded-2xl shadow-lg flex items-center gap-4 border border-gray-100">
+            <a href="/project_rbpl/Koordinator_Hub_Regional/halaman_utama.php" class="px-6 py-6 bg-white mx-6 mb-6 rounded-2xl shadow-lg flex items-center gap-4 border border-gray-100">
                 <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-orange-100 flex-none">
                     <img src="admin.png" alt="Profile" class="w-full h-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name=Admin&background=EA580C&color=fff'">
                 </div>
@@ -76,7 +76,7 @@ $stats = [
                     <h2 class="text-slate-900 text-l font-bold font-montserrat truncate">ADMIN MIDDLE MILE</h2>
                     <p class="text-gray-500 text-sm font-montserrat tracking-tight">@admin.middle.mile</p>
                 </div>
-            </div>
+            </a>
         </div>
 
         <div class="flex-1 overflow-y-auto hide-scrollbar bg-gray-50 pb-24">
@@ -150,7 +150,7 @@ $stats = [
                     <span>Tracking</span>
                 </button>
 
-                <button onclick="location.href='input.php'" class="flex-1 h-12 bg-orange-600 text-white hover:bg-orange-700 active:scale-95 font-bold font-montserrat rounded-xl shadow-sm flex items-center justify-center gap-2 transition-all">
+                <button onclick="location.href='input_admin.php'" class="flex-1 h-12 bg-orange-600 text-white hover:bg-orange-700 active:scale-95 font-bold font-montserrat rounded-xl shadow-sm flex items-center justify-center gap-2 transition-all">
                     <i class="fas fa-plus-circle text-sm"></i>
                     <span>Input Baru</span>
                 </button>

@@ -1,19 +1,15 @@
 <?php
-// --- LOGIKA DATABASE ---
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db_name = "rbpl";
+$host = "sql203.infinityfree.com";
+$user = "if0_41736846";
+$pass = "tugasRBPL2026";
+$db_name = "if0_41736846_db_rbpl";
 
-// Membuat koneksi ke MySQL
 $conn = new mysqli($host, $user, $pass, $db_name);
 
-// Cek koneksi
 if ($conn->connect_error) {
     die("Koneksi gagal: " . $conn->connect_error);
 }
 
-// Mengambil data riwayat dari database
 $shipments = [];
 $result = $conn->query("SELECT data_paket, driver, tujuan FROM input_admin_mm ORDER BY id DESC");
 
@@ -23,15 +19,14 @@ if ($result && $result->num_rows > 0) {
             'rute' => $row['tujuan'],
             'driver' => $row['driver'],
             'time' => $row['data_paket'],
-            'type' => 'Middle Mile' // Label default untuk data dari DB
+            'type' => 'Middle Mile' 
         ];
     }
 }
 
-// Statistik sederhana berdasarkan jumlah data di DB
 $stats = [
     'shipped' => count($shipments),
-    'total_weight' => 'N/A', // Bisa dihitung jika ada kolom berat di DB
+    'total_weight' => 'N/A', 
     'avg_delivery' => 'Diproses'
 ];
 ?>
@@ -114,7 +109,6 @@ $stats = [
                 <h3 class="text-slate-800 font-bold font-montserrat text-base">Riwayat Terbaru</h3>
 
                 <?php if (empty($shipments)): ?>
-                    <!-- State Jika Data Kosong -->
                     <div class="bg-white rounded-2xl p-8 shadow-sm border border-dashed border-gray-300 text-center flex flex-col items-center justify-center">
                         <div class="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center text-gray-300 mb-3">
                             <i class="fas fa-info-circle text-xl"></i>

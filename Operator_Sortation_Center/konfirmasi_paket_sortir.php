@@ -115,7 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <div class="flex-none p-6 bg-white border-t border-gray-100 z-50">
             <button onclick="handleSubmit()" class="w-full h-14 bg-orange-600 hover:bg-orange-700 active:scale-95 text-white font-bold rounded-2xl shadow-lg shadow-orange-100 flex items-center justify-center gap-3 transition-all">
-                <span>Teruskan Ke Hub Regional</span>
+                <span>Teruskan Ke Admin Middle Mile</span>
                 <i class="fas fa-chevron-right text-xs"></i>
             </button>
         </div>

@@ -157,7 +157,7 @@ $seller_data = [
 
             <div class="mt-2 grid grid-cols-3 gap-y-6 p-6 bg-white"> 
                 <div class="flex flex-col items-center gap-2">
-                    <a href="/Kurir/welcome_kurir.php" class="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center text-white shadow-md">
+                    <a href="/project_rbpl/Kurir/welcome_kurir.php" class="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center text-white shadow-md">
                         <i data-lucide="package" class="w-6 h-6"></i>
                     </a>
                     <span class="text-[10px] font-medium text-gray-700">Kirim Paket</span>

@@ -109,9 +109,9 @@ $userData = [
 
         <div class="sticky-header-content pt-0 px-0">
 
-            <div class="flex-1 overflow-y-auto no-scrollbar relative z-10 px-6 mt-6 animate-fadeIn">
+            <div class="flex-1 overflow-y-auto no-scrollbar relative z-10 px-6 mt-2 animate-fadeIn">
 
-                <div class="flex items-center mb-4">
+                <div class="flex items-center mb-2">
                     <a href="dashboard.php" class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
@@ -130,11 +130,11 @@ $userData = [
                             </svg>
                         </div>
                     </div>
-                    <h2 class="mt-4 text-xl font-bold font-montserrat text-white"><?php echo $userData['nama']; ?></h2>
+                    <h2 class="mt-2 text-xl font-bold font-montserrat text-white"><?php echo $userData['nama']; ?></h2>
                     <p class="text-orange-50 text-xs font-medium opacity-90 tracking-widest uppercase">ID: MM-202409</p>
                 </div>
 
-                <div class="mt-16 space-y-4 pb-10">
+                <div class="mt-8 space-y-4 pb-10">
                     <div class="space-y-1.5">
                         <label class="text-[10px] font-bold font-poppins text-gray-400 ml-1 uppercase tracking-wider">Email Address</label>
                         <div class="w-full bg-white border border-gray-100 p-4 rounded-2xl shadow-sm flex items-center gap-3">

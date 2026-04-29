@@ -90,7 +90,7 @@ function formatRibuan($n)
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                     </svg>
                 </a>
-                <h1 class="text-lg font-bold font-montserrat uppercase text-gray-800">Perencana Armada</h1>
+                <a href="/Driver_Middle_Mile/index_driver.php" class="text-lg font-bold font-montserrat uppercase text-gray-800">Perencana Armada</a>
             </div>
             <a href="profil.php">
                 <img src="assets/profil.png"

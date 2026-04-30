@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require '../config/db.php';
+require_once '../config/db.php';
 
 if (!isset($_SESSION['penjual_id'])) {
     header("Location: login_penjual.php");
@@ -115,7 +115,7 @@ foreach ($kata as $k) {
             <div class="flex flex-col items-center">
                 <div class="relative">
                     <div class="w-28 h-28 rounded-full border-4 border-white shadow-xl overflow-hidden bg-gray-100">
-                        <img src="<?php echo $userData['name'] ?? 'https://placehold.co/130x130/EF4C29/white?text=' . $inisial; ?>">
+                        <img src="<?php echo $userData['foto'] ?? 'https://placehold.co/130x130/EF4C29/white?text=' . $inisial; ?>"
                             class="w-full h-full object-cover">
                     </div>
                     <div class="absolute bottom-1 right-1 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md text-brand border border-gray-100">

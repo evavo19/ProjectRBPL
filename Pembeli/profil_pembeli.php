@@ -1,24 +1,25 @@
 <?php
+session_start();
+require '../config/db.php';
 
-/**
- * Backend Logic (Simulasi Database)
- */
+if (!isset($_SESSION['pembeli_id'])) {
+    header("Location: login_pembeli.php");
+    exit();
+}
+
+$id = $_SESSION['pembeli_id'];
+
+$query = "SELECT * FROM profil_pembeli WHERE id = '$id'";
+$result = mysqli_query($conn, $query);
+$userData = mysqli_fetch_assoc($result);
+
 $user_data = [
-    'username' => 'Eva Dewi Agustin',
+    'username' => $userData['nama'] ?? 'User',
     'shopeepay' => 100000,
     'koin' => 1000,
     'tier' => 'Silver Member',
     'followers' => 20,
     'following' => 5,
-    'spaylater_promo' => 'Diskon 100%'
-];
-
-$menu_items = [
-    ['name' => 'Shopee Affiliate Program', 'icon' => 'award', 'color' => 'text-orange-600'],
-    ['name' => 'Favorit Saya', 'icon' => 'heart', 'color' => 'text-orange-600'],
-    ['name' => 'Terakhir Dilihat', 'icon' => 'history', 'color' => 'text-blue-500'],
-    ['name' => 'ShopeeVIP', 'icon' => 'crown', 'color' => 'text-red-500'],
-    ['name' => 'Katalog Saya', 'icon' => 'book-open', 'color' => 'text-emerald-500'],
 ];
 ?>
 
@@ -43,7 +44,6 @@ $menu_items = [
             font-family: 'Poppins', sans-serif;
         }
 
-        /* Wrapper utama: flex column, overflow hidden agar hanya .scroll-content yg scroll */
         .app-container {
             width: 390px;
             height: 100vh;
@@ -58,14 +58,12 @@ $menu_items = [
             max-width: 100%;
         }
 
-        /* Header orange: flex-shrink 0 agar tidak ikut scroll sama sekali */
         .sticky-header {
             background: linear-gradient(180deg, #F54D2D 0%, #FF6433 100%);
             flex-shrink: 0;
             border-radius: 0 0 28px 28px;
         }
 
-        /* Hanya area ini yang scroll */
         .scroll-content {
             flex: 1;
             overflow-y: auto;
@@ -88,10 +86,8 @@ $menu_items = [
 
     <div class="app-container">
 
-        <!-- ===== HEADER ORANGE: tidak ikut scroll ===== -->
         <div class="sticky-header">
 
-            <!-- ACTION BAR: pt-6 agar icon tidak mepet ke atas -->
             <div class="px-6 pt-6 pb-3 flex justify-end gap-4 text-white">
                 <i data-lucide="settings" class="w-5 h-5 cursor-pointer"></i>
                 <a href="keranjang_pembeli.php" class="text-white">
@@ -100,7 +96,6 @@ $menu_items = [
                 <i data-lucide="message-circle" class="w-5 h-5 cursor-pointer"></i>
             </div>
 
-            <!-- USER INFO -->
             <div class="px-6 pb-6 flex items-center gap-4">
                 <div class="relative">
                     <img src="assets/profil.png" class="w-16 h-16 rounded-full border-2 border-white/50 object-cover shadow-lg">
@@ -125,10 +120,8 @@ $menu_items = [
             </div>
         </div>
 
-        <!-- ===== KONTEN YANG BISA DI-SCROLL ===== -->
         <div class="scroll-content">
 
-            <!-- PESANAN SAYA -->
             <div class="section-card p-4">
                 <div class="flex justify-between items-center mb-3">
                     <div class="flex items-center gap-2">
@@ -160,7 +153,6 @@ $menu_items = [
                 </div>
             </div>
 
-            <!-- DOMPET SAYA -->
             <div class="section-card py-4">
                 <div class="px-4 mb-4 flex items-center gap-2">
                     <i data-lucide="wallet-minimal" class="w-4 h-4 text-orange-600"></i>
@@ -186,7 +178,6 @@ $menu_items = [
                 </div>
             </div>
 
-            <!-- KEUANGAN -->
             <div class="section-card p-4">
                 <div class="flex justify-between items-center mb-4">
                     <div class="flex items-center gap-2">
@@ -217,7 +208,6 @@ $menu_items = [
                 </div>
             </div>
 
-            <!-- MENU LIST -->
             <div class="section-card pb-4">
                 <?php foreach ($menu_items as $menu): ?>
                     <div class="flex justify-between items-center p-4 border-b border-gray-50 active:bg-gray-50">
@@ -231,9 +221,7 @@ $menu_items = [
             </div>
 
         </div>
-        <!-- END SCROLL CONTENT -->
 
-        <!-- BOTTOM NAVIGATION: absolute di bawah app-container -->
         <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-[0_-4px_20px_rgba(0,0,0,0.08)] flex justify-around items-center py-3 z-50 rounded-b-3xl">
             <a href="dashboard_pembeli.php" class="flex flex-col items-center gap-0.5 group transition-all duration-200">
                 <i data-lucide="home" class="w-6 h-6 text-gray-400 group-hover:text-orange-600"></i>

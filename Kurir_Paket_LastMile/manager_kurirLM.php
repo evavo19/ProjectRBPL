@@ -1,12 +1,12 @@
 <?php
 
-$host   = 'localhost';
-$db     = 'rbpl';
-$user   = 'root';
-$pass   = '';
+$host = "sql203.infinityfree.com";
+$user = "if0_41736846";
+$password = "tugasRBPL2026";
+$database = "if0_41736846_db_rbpl";
 $charset = 'utf8mb4';
 
-$conn = new mysqli($host, $user, $pass, $db);
+$conn = new mysqli($host, $user, $password, $database);
 $conn->set_charset($charset);
 
 if ($conn->connect_error) {

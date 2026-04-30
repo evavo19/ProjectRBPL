@@ -1,13 +1,13 @@
 <?php
 session_start();
 
-$host = 'localhost';
-$db   = 'rbpl';
-$user = 'root';
-$pass = '';
+$host = "sql203.infinityfree.com";
+$user = "if0_41736846";
+$password = "tugasRBPL2026";
+$database = "if0_41736846_db_rbpl";
 $charset = 'utf8mb4';
 
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+$dsn = "mysql:host=$host;dbname=$database;charset=$charset";
 $options = [
     PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
@@ -18,7 +18,7 @@ $message = "";
 $status_type = "";
 
 try {
-    $pdo = new PDO($dsn, $user, $pass, $options);
+    $pdo = new PDO($dsn, $user, $password, $options);
 } catch (\PDOException $e) {
     throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }

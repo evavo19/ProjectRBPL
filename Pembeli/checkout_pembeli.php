@@ -2,14 +2,14 @@
 
 $user_address = [
     'name'    => 'Eva Dewi Agustin',
-    'phone'   => '+62 812-3456-7890',
+    'phone'   => '+62 812-2809-7866',
     'address' => 'Plambongan Triwidadi Pajangan Bantul, Yogyakarta RT 03, PAJANGAN, KAB. BANTUL, DI YOGYAKARTA, ID 55751'
 ];
 
 $shipping = [
     'type' => 'Reguler',
     'cost' => 8000,
-    'eta'  => '17 - 20 Des',
+    'eta'  => '30 April - 15 Mei',
 ];
 
 $service_fee       = 1000;

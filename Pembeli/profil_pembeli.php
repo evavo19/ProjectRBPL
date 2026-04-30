@@ -13,7 +13,6 @@ $query = "SELECT * FROM pembeli WHERE id = '$id'";
 $result = mysqli_query($conn, $query);
 $userData = mysqli_fetch_assoc($result);
 
-
 $identifier = $userData['identifier'] ?? 'User';
 $username = strstr($identifier, '@', true) ?: $identifier;
 
@@ -24,6 +23,14 @@ $user_data = [
     'tier' => 'Silver Member',
     'followers' => 20,
     'following' => 5,
+];
+
+$menu_items = [
+    ['name' => 'Shopee Affiliate Program', 'icon' => 'award', 'color' => 'text-orange-600'],
+    ['name' => 'Favorit Saya', 'icon' => 'heart', 'color' => 'text-orange-600'],
+    ['name' => 'Terakhir Dilihat', 'icon' => 'history', 'color' => 'text-blue-500'],
+    ['name' => 'ShopeeVIP', 'icon' => 'crown', 'color' => 'text-red-500'],
+    ['name' => 'Katalog Saya', 'icon' => 'book-open', 'color' => 'text-emerald-500'],
 ];
 ?>
 

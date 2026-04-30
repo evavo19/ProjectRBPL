@@ -1,8 +1,8 @@
 <?php
-$host = "sql203.infinityfree.com";
-$user = "if0_41736846";
-$password = "tugasRBPL2026";
-$database = "if0_41736846_db_rbpl";
+$host = "localhost";
+$user = "root";
+$password = "";
+$database = "rbpl";
 
 $error_message = "";
 $show_success_modal = false;
@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if (session_status() === PHP_SESSION_NONE) {
                     session_start();
                 }
-                $_SESSION['user_id'] = $row['id'];
+                $_SESSION['pembeli_id'] = $row['id'];
                 $_SESSION['username'] = $row['identifier'];
 
                 $show_success_modal = true;
@@ -111,8 +111,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         @keyframes modalIn {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
     </style>
 </head>
@@ -145,7 +152,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <?php if ($error_message): ?>
                 <script>
-                    document.addEventListener('DOMContentLoaded', function () {
+                    document.addEventListener('DOMContentLoaded', function() {
                         Swal.fire({
                             icon: 'error',
                             title: 'Oops...',
@@ -273,7 +280,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         const togglePassword = document.getElementById('togglePassword');
         const passwordInput = document.getElementById('passwordInput');
         if (togglePassword && passwordInput) {
-            togglePassword.addEventListener('click', function () {
+            togglePassword.addEventListener('click', function() {
                 const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
                 passwordInput.setAttribute('type', type);
             });
@@ -291,4 +298,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </script>
 
 </body>
+
 </html>

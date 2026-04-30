@@ -135,8 +135,8 @@
 <body>
 
     <div class="app-container">
-        <!-- SCAN OVERLAY -->
-        <div id="scan-view" class="scan-overlay">
+
+    <div id="scan-view" class="scan-overlay">
             <div class="scanner-box">
                 <div class="scanner-line"></div>
                 <div class="absolute inset-0 border-[40px] border-black/40"></div>
@@ -145,9 +145,7 @@
             <button onclick="closeScan()" class="mt-10 bg-white/10 hover:bg-white/20 text-white px-8 py-3 rounded-2xl border border-white/20 backdrop-blur-md">Batal</button>
         </div>
 
-        <!-- VIEW: PICKUP -->
         <div id="view-pickup" class="view-content animate-up">
-            <!-- Menambahkan padding top lebih besar (pt-8) karena status bar dihapus -->
             <div class="px-6 pt-8 pb-4">
                 <div class="flex justify-between items-center mb-1">
                     <h1 class="text-[10px] font-bold font-montserrat text-brand uppercase tracking-[0.2em]">Tugas Penjemputan</h1>
@@ -158,7 +156,6 @@
                 <h2 class="text-2xl font-bold font-poppins text-gray-900 leading-tight">Halo, Muhammad! 👋</h2>
                 <p class="text-gray-400 text-xs mt-1 font-poppins">Kamu punya <span id="task-count-text" class="text-brand font-bold">2 paket</span> yang harus dijemput.</p>
 
-                <!-- EMPTY STATE PICKUP -->
                 <div id="empty-tasks" class="hidden flex flex-col items-center justify-center mt-20 text-center animate-up">
                     <div class="w-32 h-32 bg-gray-50 rounded-full flex items-center justify-center mb-4">
                         <i data-lucide="sparkles" class="w-16 h-16 text-gray-200"></i>
@@ -168,8 +165,8 @@
                 </div>
 
                 <div id="task-list" class="mt-8 space-y-4">
-                    <!-- TASK 1 -->
-                    <div class="task-card bg-white p-5 rounded-[2.5rem] border border-gray-100 shadow-[0_10px_20px_-10px_rgba(0,0,0,0.05)]" id="task-1">
+
+                <div class="task-card bg-white p-5 rounded-[2.5rem] border border-gray-100 shadow-[0_10px_20px_-10px_rgba(0,0,0,0.05)]" id="task-1">
                         <div class="flex items-start gap-4">
                             <div class="w-14 h-14 bg-gradient-to-br from-orange-50 to-orange-100 rounded-3xl flex items-center justify-center text-brand font-bold text-xl border border-orange-100 shadow-inner">
                                 B
@@ -194,7 +191,7 @@
                             </button>
                         </div>
                     </div>
-                    <!-- TASK 2 -->
+
                     <div class="task-card bg-white p-5 rounded-[2.5rem] border border-gray-100 shadow-[0_10px_20px_-10px_rgba(0,0,0,0.05)]" id="task-2">
                         <div class="flex items-start gap-4">
                             <div class="w-14 h-14 bg-gradient-to-br from-orange-50 to-orange-100 rounded-3xl flex items-center justify-center text-brand font-bold text-xl border border-orange-100 shadow-inner">
@@ -224,7 +221,6 @@
             </div>
         </div>
 
-        <!-- VIEW: HISTORY -->
         <div id="view-history" class="view-content hidden-view animate-up">
             <div class="px-6 pt-8 pb-4">
                 <h1 class="text-[10px] font-bold font-montserrat text-brand uppercase tracking-[0.2em]">Data Riwayat</h1>
@@ -248,7 +244,6 @@
             </div>
         </div>
 
-        <!-- BOTTOM NAV -->
         <div class="absolute bottom-0 w-full h-24 bg-white/80 backdrop-blur-xl border-t border-gray-100 flex justify-around items-center px-8 pb-4 z-40">
             <button onclick="switchView('pickup')" id="nav-pickup" class="flex flex-col items-center nav-active group transition-all duration-300">
                 <i data-lucide="layout-grid" class="w-6 h-6 group-hover:scale-125 group-hover:text-orange-600 transition-all duration-300"></i>

@@ -1,10 +1,5 @@
 <?php
 
-/**
- * BACKEND LOGIC (JAVA-STYLE PHP IMPLEMENTATION)
- * Merepresentasikan struktur Service dan Model jika menggunakan Java Spring Boot.
- */
-
 class Delivery
 {
     public $id;
@@ -29,7 +24,6 @@ class DeliveryService
 {
     public function findAll()
     {
-        // Simulasi Database Fetch untuk Last Mile
         return [
             new Delivery(1, "LM-001-XYZ", "Budi Santoso", "Dalam Perjalanan", "Siti Aminah", "5m ago"),
             new Delivery(2, "LM-002-ABC", "Andi Wijaya", "Menuju Lokasi", "Bambang Perkasa", "12m ago"),
@@ -38,7 +32,6 @@ class DeliveryService
     }
 }
 
-// Controller Logic
 $deliveryService = new DeliveryService();
 $view = $_GET['view'] ?? 'onboarding';
 

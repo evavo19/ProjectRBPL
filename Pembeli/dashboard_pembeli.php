@@ -80,7 +80,6 @@ $video_products = [
     <div class="app-container shadow-2xl">
 
         <div class="header-gradient pb-10">
-
             <div class="px-4 pt-10 flex items-center gap-3">
                 <div class="flex-1 bg-white rounded-sm flex items-center px-3 py-1.5 gap-2 shadow-sm">
                     <i data-lucide="search" class="w-4 h-4 text-gray-400"></i>

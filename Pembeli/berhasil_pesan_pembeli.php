@@ -55,7 +55,7 @@ $video_products = [
             width: 390px;
             height: 100vh;
             background-color: #FFFFFF;
-            border-radius: 32px;
+            border-radius: 25px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
             overflow-y: auto;
             position: relative;
@@ -116,19 +116,7 @@ $video_products = [
         </div>
 
         <div class="header-gradient pb-10">
-            <div class="flex justify-between items-center px-8 pt-6 pb-4 text-white">
-                <span class="text-xs font-semibold font-poppins" id="clock">00:00</span>
-                <div class="flex items-center gap-1.5">
-                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"></path>
-                    </svg>
-                    <div class="w-5 h-2.5 border border-white rounded-[2px] p-[1px] flex justify-start items-center">
-                        <div class="bg-white h-full w-[70%] rounded-[1px]"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="px-4 flex items-center gap-3">
+            <div class="px-4 pt-10 flex items-center gap-3">
                 <div class="flex-1 bg-white rounded-sm flex items-center px-3 py-1.5 gap-2 shadow-sm">
                     <i data-lucide="search" class="w-4 h-4 text-gray-400"></i>
                     <input type="text" placeholder="Cari di Shopee" class="text-xs w-full outline-none text-gray-800 bg-transparent">

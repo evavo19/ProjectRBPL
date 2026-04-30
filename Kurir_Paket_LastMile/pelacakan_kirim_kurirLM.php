@@ -128,7 +128,7 @@ $stats = [
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" />
                     </svg>
                 </a>
-                <a href="/Pembeli/first_page_pembeli.php" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:#1f2937;margin:0;">
+                <a href="/project_rbpl/Pembeli/first_page_pembeli.php" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:#1f2937;margin:0;">
                     Pelacakan Pengiriman
                 </a>
             </div>

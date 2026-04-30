@@ -1,21 +1,21 @@
 <?php
-$host = "sql203.infinityfree.com";
-$user = "if0_41736846";
-$password = "tugasRBPL2026";
-$database = "if0_41736846_db_rbpl";
+$host = "localhost";
+$user = "root";
+$password = "";
+$database = "rbpl";
 
-$conn = new mysqli($host, $user, $password, $database);
+$conn = mysqli_connect($host, $user, $password, $database);
 
 $success = false;
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $dataPaket = $_POST['data_paket'] ?? '';
-    $resi      = $_POST['resi'] ?? ''; 
+    $resi      = $_POST['resi'] ?? '';
     $tujuan    = $_POST['tujuan'] ?? '';
 
     if (!empty($dataPaket) && !empty($resi) && !empty($tujuan)) {
         $stmt = $conn->prepare("INSERT INTO input_admin_mm (data_paket, driver, tujuan) VALUES (?, ?, ?)");
         $stmt->bind_param("sss", $dataPaket, $resi, $tujuan);
-        
+
         if ($stmt->execute()) {
             $success = true;
         }
@@ -25,6 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,19 +34,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { font-family: 'Poppins', sans-serif; }
-        .font-montserrat { font-family: 'Montserrat', sans-serif; }
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .font-montserrat {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
         input[type="date"] {
             min-height: 2.75rem;
         }
     </style>
 </head>
+
 <body class="bg-gray-200 flex justify-center">
 
     <div class="w-full max-w-[384px] h-screen bg-white shadow-2xl relative flex flex-col md:rounded-[25px] overflow-hidden">
-        
+
         <div class="flex-none bg-orange-600 z-50">
             <div class="px-6 py-4 flex items-center gap-4">
                 <a href="catat_admin.php" class="p-2 -ml-2 hover:bg-orange-700 rounded-full transition-colors">
@@ -57,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <div class="flex-1 overflow-y-auto hide-scrollbar bg-gray-50">
             <form id="inputForm" method="POST" action="input_admin.php" class="px-6 py-8 space-y-6">
-                
+
                 <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 flex flex-col gap-3">
                     <label class="text-slate-800 text-lg font-medium font-poppins">Data Tanggal Paket</label>
                     <div class="relative">
@@ -107,7 +122,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <script>
         function handleSave() {
             const form = document.getElementById('inputForm');
-            
+
             if (!form.data_paket.value.trim() || !form.resi.value.trim() || !form.tujuan.value.trim()) {
                 alert("Harap lengkapi semua data!");
                 return;
@@ -115,7 +130,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             const btn = document.getElementById('btnSimpan');
             const originalText = btn.innerHTML;
-            
+
             btn.disabled = true;
             btn.innerHTML = '<i class="fas fa-circle-notch animate-spin mr-2"></i> Memproses...';
 
@@ -129,4 +144,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     </script>
 </body>
+
 </html>

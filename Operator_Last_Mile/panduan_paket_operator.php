@@ -101,7 +101,7 @@ $daftarPaket = $paketService->getPaketList();
     <div class="app-container">
 
         <div class="px-6 py-4 flex justify-between items-center bg-white border-b border-gray-50 mt-8">
-            <h1 class="text-2xl font-bold font-montserrat text-gray-900">Paket</h1>
+            <a href="/Kurir_Paket_LastMile/index_kurirLM.php" class="text-2xl font-bold font-montserrat text-gray-900">Paket</a>
             <a href="profil_operator.php" class="w-10 h-10 rounded-full overflow-hidden block">
                 <img src="assets/profil.png" alt="Profile" class="w-full h-full object-cover">
             </a>

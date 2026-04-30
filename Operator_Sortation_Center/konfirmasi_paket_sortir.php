@@ -129,7 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             <h3 class="text-2xl font-bold text-slate-800 mb-2">Berhasil!</h3>
             <p class="text-gray-500 text-sm mb-8">Data paket diperbarui dan diteruskan ke Admin Middle Mile.</p>
-            <button onclick="location.href='/Admin_Middle_Mile/catat_admin.php'" class="w-full py-4 bg-slate-900 text-white rounded-2xl font-bold hover:bg-black transition-colors">Selesai</button>
+            <button onclick="location.href='/project_rbpl/Admin_Middle_Mile/catat_admin.php'" class="w-full py-4 bg-slate-900 text-white rounded-2xl font-bold hover:bg-black transition-colors">Selesai</button>
         </div>
     </div>
 

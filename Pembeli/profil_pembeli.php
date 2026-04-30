@@ -9,12 +9,16 @@ if (!isset($_SESSION['pembeli_id'])) {
 
 $id = $_SESSION['pembeli_id'];
 
-$query = "SELECT * FROM profil_pembeli WHERE id = '$id'";
+$query = "SELECT * FROM pembeli WHERE id = '$id'";
 $result = mysqli_query($conn, $query);
 $userData = mysqli_fetch_assoc($result);
 
+
+$identifier = $userData['identifier'] ?? 'User';
+$username = strstr($identifier, '@', true) ?: $identifier;
+
 $user_data = [
-    'username' => $userData['nama'] ?? 'User',
+    'username' => $username,
     'shopeepay' => 100000,
     'koin' => 1000,
     'tier' => 'Silver Member',

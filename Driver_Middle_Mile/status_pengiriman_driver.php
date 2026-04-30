@@ -135,7 +135,7 @@ $deliveryData = [
                 <button class="w-full bg-brand hover:brightness-110 text-white font-bold py-4 rounded-2xl transition shadow-lg shadow-orange-100 active:scale-[0.98]">
                     Gunakan Pintasan Rute
                 </button>
-                <a href="/Operator_Last_Mile/index_operator.php" class="w-full bg-zinc-900 hover:bg-black text-white font-bold py-4 rounded-2xl transition shadow-lg shadow-gray-200 active:scale-[0.98] flex items-center justify-center">
+                <a href="/project_rbpl/Operator_Last_Mile/index_operator.php" class="w-full bg-zinc-900 hover:bg-black text-white font-bold py-4 rounded-2xl transition shadow-lg shadow-gray-200 active:scale-[0.98] flex items-center justify-center">
                     Konfirmasi Tiba di Hub
                 </a>
             </div>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-$conn = mysqli_connect("localhost", "root", "", "rbpl");
+$conn = mysqli_connect("sql203.infinityfree.com", "if0_41736846", "tugasRBPL2026", "if0_41736846_db_rbpl");
 
 if (!$conn) {
     die("Koneksi gagal: " . mysqli_connect_error());
@@ -10,14 +10,14 @@ $show_modal = false;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['proses_daftar'])) {
     $user = mysqli_real_escape_string($conn, $_POST['identifier']);
-    $pass = mysqli_real_escape_string($conn, $_POST['password']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
 
     $cek = mysqli_query($conn, "SELECT * FROM pembeli WHERE identifier = '$user'");
 
     if (mysqli_num_rows($cek) > 0) {
         $error_msg = "Akun sudah terdaftar!";
     } else {
-        $sql = "INSERT INTO pembeli (identifier, password) VALUES ('$user', '$pass')";
+        $sql = "INSERT INTO pembeli (identifier, password) VALUES ('$user', '$password')";
         if (mysqli_query($conn, $sql)) {
             $show_modal = true;
         } else {

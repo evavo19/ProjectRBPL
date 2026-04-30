@@ -149,21 +149,11 @@ $coin_value        = 470;
     </div>
 </div>
 
-<div class="app-container shadow-2xl">
+<div class="app-container shadow-md">
 
     <div class="header-gradient sticky top-0 z-50">
-        <div class="flex justify-between items-center px-8 pt-6 pb-2 text-white">
-            <span class="text-xs font-semibold font-poppins" id="clock">09:27</span>
-            <div class="flex items-center gap-1.5">
-                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/>
-                </svg>
-                <div class="w-5 h-2.5 border border-white rounded-[2px] p-[1px] flex justify-start items-center">
-                    <div class="bg-white h-full w-[70%] rounded-[1px]"></div>
-                </div>
-            </div>
-        </div>
-        <div class="flex items-center px-4 pb-4 pt-1 text-white gap-3">
+
+        <div class="flex items-center px-4 pb-4 pt-8 text-white gap-3">
             <button onclick="window.history.back()">
                 <i data-lucide="arrow-left" class="w-6 h-6"></i>
             </button>

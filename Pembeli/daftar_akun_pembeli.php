@@ -1,4 +1,7 @@
 <?php
+
+require_once 'security.php';
+
 session_start();
 $conn = mysqli_connect("localhost", "root", "", "rbpl");
 

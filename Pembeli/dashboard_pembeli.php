@@ -1,5 +1,7 @@
 <?php
 
+require_once 'security.php';
+
 session_start();
 if (!isset($_SESSION['pembeli_id'])) {
     header('Location: login_pembeli.php');

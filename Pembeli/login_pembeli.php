@@ -1,4 +1,10 @@
 <?php
+
+header('X-Frame-Options: DENY');
+header('X-Content-Type-Options: nosniff');
+header("Content-Security-Policy: frame-ancestors 'none'");
+session_set_cookie_params(['httponly' => true, 'samesite' => 'Lax']);
+
 $host = "localhost";
 $user = "root";
 $password = "";

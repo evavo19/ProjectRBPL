@@ -1,5 +1,11 @@
 <?php
 
+session_start();
+if (!isset($_SESSION['pembeli_id'])) {
+    header('Location: login_pembeli.php');
+    exit;
+}
+
 $user_data = [
     'username' => 'Pembeli_Shopee',
     'shopeepay' => 100000,

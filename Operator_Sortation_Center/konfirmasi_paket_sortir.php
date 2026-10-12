@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class="space-y-3 font-roboto text-sm text-gray-600">
                         <div class="flex justify-between border-b border-gray-50 pb-2">
                             <span>Package ID</span>
-                            <span class="font-bold text-slate-800"><?php echo $packageId; ?></span>
+                            <span class="font-bold text-slate-800"><?php echo htmlspecialchars($packageId, ENT_QUOTES, 'UTF-8'); ?></span>
                         </div>
                         <div class="flex justify-between border-b border-gray-50 pb-2">
                             <span>Weight</span>
@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </div>
                         <div class="pt-2">
                             <span class="text-gray-400 block text-[10px] uppercase font-bold mb-1">Current Destination</span>
-                            <p class="text-orange-600 font-bold text-base leading-tight"><?php echo $destination; ?></p>
+                            <p class="text-orange-600 font-bold text-base leading-tight"><?php echo htmlspecialchars($destination, ENT_QUOTES, 'UTF-8'); ?></p>
                         </div>
                     </div>
                 </div>
